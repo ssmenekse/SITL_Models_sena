@@ -1,0 +1,129 @@
+################################################################################
+# rover.parm
+ATC_SPEED_P 0.1
+ATC_STR_RAT_FF 0.75
+BATT_MONITOR 4
+CRUISE_SPEED 5
+CRUISE_THROTTLE 30
+INS_ACC2OFFS_X 0.001
+INS_ACC2OFFS_Y 0.001
+INS_ACC2OFFS_Z 0.001
+INS_ACC2SCAL_X 1.001
+INS_ACC2SCAL_Y 1.001
+INS_ACC2SCAL_Z 1.001
+INS_ACCOFFS_X 0.001
+INS_ACCOFFS_Y 0.001
+INS_ACCOFFS_Z 0.001
+INS_ACCSCAL_X 1.001
+INS_ACCSCAL_Y 1.001
+INS_ACCSCAL_Z 1.001
+MODE3 11
+MODE4 10
+MODE5 2
+RC1_MAX 2000
+RC1_MIN 1000
+RC3_MAX 2000
+RC3_MIN 1000
+RELAY_PIN 1
+RELAY_PIN2 2
+SERVO1_MIN 1000
+SERVO1_MAX 2000
+SERVO3_MAX 2000
+SERVO3_MIN 1000
+# for brushed control
+SIM_PIN_MASK 127
+WP_RADIUS 3
+WP_SPEED 5
+INS_LOG_BAT_MASK 127
+
+################################################################################
+# rover-skid.parm
+ATC_STR_RAT_FF 0.2
+CRUISE_SPEED 3
+CRUISE_THROTTLE 75
+SERVO1_FUNCTION 73
+SERVO3_FUNCTION 74
+WP_SPEED 3
+
+################################################################################
+# avoid https://ardupilot.org/rover/docs/common-simple-object-avoidance.html
+# disable simple avoidance when using Dijkstra with Bendy-Ruler  
+AVOID_ENABLE        0
+
+# https://ardupilot.org/rover/docs/common-oa-bendyruler.html#common-oa-bendyruler
+# Dijkstra with Bendy-Ruler
+OA_TYPE             3
+
+OA_MARGIN_MAX       1.0
+OA_OPTIONS          0
+
+OA_BR_CONT_ANGLE    180.0
+OA_BR_CONT_RATIO    1.5
+OA_BR_LOOKAHEAD     5.0
+
+OA_DB_BEAM_WIDTH    5.0
+OA_DB_DIST_MAX      0.0
+OA_DB_EXPIRE        30.0
+OA_DB_OUTPUT        3.0
+OA_DB_QUEUE_SIZE    80.0
+OA_DB_RADIUS_MIN    0.1
+OA_DB_SIZE          100.0
+
+################################################################################
+# range sensor params
+# RangeFinder - set to 4 use RNGFND1 as proximity sensor
+PRX1_TYPE           0
+
+RNGFND1_TYPE        100
+RNGFND1_FUNCTION    0
+RNGFND1_MIN_CM      10
+RNGFND1_MAX_CM      400
+RNGFND1_POS_X       0.25
+RNGFND1_POS_Y       0.0
+RNGFND1_POS_Z       -0.05
+RNGFND1_ORIENT      0
+
+RNGFND2_TYPE        100
+RNGFND2_FUNCTION    0
+RNGFND2_MIN_CM      10
+RNGFND2_MAX_CM      400
+RNGFND2_POS_X       -0.25
+RNGFND2_POS_Y       0.0
+RNGFND2_POS_Z       -0.05
+RNGFND2_ORIENT      4
+
+RNGFND3_TYPE        100
+RNGFND3_FUNCTION    0
+RNGFND3_MIN_CM      10
+RNGFND3_MAX_CM      400
+RNGFND3_POS_X       0.25
+RNGFND3_POS_Y       -0.15
+RNGFND3_POS_Z       -0.05
+RNGFND3_ORIENT      7
+
+RNGFND4_TYPE        100
+RNGFND4_FUNCTION    0
+RNGFND4_MIN_CM      10
+RNGFND4_MAX_CM      400
+RNGFND4_POS_X       0.25
+RNGFND4_POS_Y       0.15
+RNGFND4_POS_Z       -0.05
+RNGFND4_ORIENT      1
+
+RNGFND5_TYPE        100
+RNGFND5_FUNCTION    0
+RNGFND5_MIN_CM      10
+RNGFND5_MAX_CM      400
+RNGFND5_POS_X       -0.25
+RNGFND5_POS_Y       -0.15
+RNGFND5_POS_Z       -0.05
+RNGFND5_ORIENT      5
+
+RNGFND6_TYPE        100
+RNGFND6_FUNCTION    0
+RNGFND6_MIN_CM      10
+RNGFND6_MAX_CM      400
+RNGFND6_POS_X       -0.25
+RNGFND6_POS_Y       0.15
+RNGFND6_POS_Z       -0.05
+RNGFND6_ORIENT      3

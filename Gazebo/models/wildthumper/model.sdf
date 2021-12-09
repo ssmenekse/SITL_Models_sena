@@ -295,7 +295,7 @@
           <friction>
             <ode>
               <mu>10.0</mu>
-              <mu2>5.0</mu2>
+              <mu2>10.0</mu2>
               <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -511,7 +511,7 @@
           <friction>
             <ode>
               <mu>10.0</mu>
-              <mu2>5.0</mu2>
+              <mu2>10.0</mu2>
               <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -789,7 +789,7 @@
           <friction>
             <ode>
               <mu>10.0</mu>
-              <mu2>5.0</mu2>
+              <mu2>10.0</mu2>
               <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -1005,7 +1005,7 @@
           <friction>
             <ode>
               <mu>10.0</mu>
-              <mu2>5.0</mu2>
+              <mu2>10.0</mu2>
               <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -1345,7 +1345,7 @@
           <friction>
             <ode>
               <mu>10.0</mu>
-              <mu2>5.0</mu2>
+              <mu2>10.0</mu2>
               <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -1561,7 +1561,7 @@
           <friction>
             <ode>
               <mu>10.0</mu>
-              <mu2>5.0</mu2>
+              <mu2>10.0</mu2>
               <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -1743,9 +1743,703 @@
         <update_rate>1000.0</update_rate>
       </sensor>
     </link>
-    <joint name='wildthumper/imu_joint' type='revolute'>
+    <joint name='imu_joint' type='revolute'>
       <child>imu_link</child>
       <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='lidar_link'>
+      <pose relative_to='lidar_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>9.09375e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.09375e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.1875e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.035</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/rplidar_a1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='lidar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>5</update_rate>
+        <visualize>1</visualize>
+        <topic>lidar_link/sensor/lidar</topic>
+        <pose>0 0 0.045 0 -0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>6.28319</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>12</max>
+            <resolution>0.05</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='lidar_joint' type='revolute'>
+      <pose relative_to='base_link'>0.11 0 0.03 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>lidar_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='sonar_front_link'>
+      <pose relative_to='sonar_front_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>3.04167e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.5e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.04167e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.04 0.015</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/hcsr04.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='sonar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>20</update_rate>
+        <visualize>1</visualize>
+        <topic>sonar_front_link/sensor/sonar</topic>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>3</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.02</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.1</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='sonar_front_joint' type='revolute'>
+      <pose relative_to='base_link'>0.225 0 0.01 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>sonar_front_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='sonar_back_link'>
+      <pose relative_to='sonar_back_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>3.04167e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.5e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.04167e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.04 0.015</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/hcsr04.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='sonar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>20</update_rate>
+        <visualize>1</visualize>
+        <topic>sonar_back_link/sensor/sonar</topic>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>3</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.02</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.1</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='sonar_back_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.225 0 0.01 0 0 3.14159</pose>
+      <parent>base_link</parent>
+      <child>sonar_back_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='sonar_front_left_link'>
+      <pose relative_to='sonar_front_left_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>3.04167e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.5e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.04167e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.04 0.015</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/hcsr04.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='sonar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>20</update_rate>
+        <visualize>1</visualize>
+        <topic>sonar_front_left_link/sensor/sonar</topic>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>3</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.02</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.1</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='sonar_front_left_joint' type='revolute'>
+      <pose relative_to='base_link'>0.21 0.05 0.01 0 0 0.785398</pose>
+      <parent>base_link</parent>
+      <child>sonar_front_left_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='sonar_front_right_link'>
+      <pose relative_to='sonar_front_right_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>3.04167e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.5e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.04167e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.04 0.015</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/hcsr04.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='sonar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>20</update_rate>
+        <visualize>1</visualize>
+        <topic>sonar_front_right_link/sensor/sonar</topic>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>3</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.02</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.1</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='sonar_front_right_joint' type='revolute'>
+      <pose relative_to='base_link'>0.21 -0.05 0.01 0 0 -0.785398</pose>
+      <parent>base_link</parent>
+      <child>sonar_front_right_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='sonar_back_left_link'>
+      <pose relative_to='sonar_back_left_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>3.04167e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.5e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.04167e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.04 0.015</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/hcsr04.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='sonar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>20</update_rate>
+        <visualize>1</visualize>
+        <topic>sonar_back_left_link/sensor/sonar</topic>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>3</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.02</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.1</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='sonar_back_left_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.21 0.05 0.01 0 0 2.35619</pose>
+      <parent>base_link</parent>
+      <child>sonar_back_left_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='sonar_back_right_link'>
+      <pose relative_to='sonar_back_right_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>3.04167e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.5e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.04167e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.04 0.015</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wildthumper/meshes/sensors/hcsr04.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://wildthumper/materials/textures/black_metal/black_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://wildthumper/materials/textures/black_metal/black_metal_metallic.jpg</metalness_map>
+              <normal_map>model://wildthumper/materials/textures/black_metal/black_metal_normal.jpg</normal_map>
+              <roughness_map>model://wildthumper/materials/textures/black_metal/black_metal_roughness.jpg</roughness_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <sensor name='sonar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>20</update_rate>
+        <visualize>1</visualize>
+        <topic>sonar_back_right_link/sensor/sonar</topic>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>3</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.02</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.1</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+    <joint name='sonar_back_right_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.21 -0.05 0.01 0 0 -2.35619</pose>
+      <parent>base_link</parent>
+      <child>sonar_back_right_link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -1935,6 +2629,129 @@
         <cmd_max>-1.0</cmd_max>
         <cmd_min>0.0</cmd_min>
       </control>
+
+      <!-- Sonar sensor -->
+      <!-- 
+        Types
+        =====
+        Use the same type identifier as used in the sensor
+        SDF element:
+        http://sdformat.org/spec?ver=1.7&elem=sensor
+        type = air_pressure, altimeter, camera, depth_camera,
+        force_torque, gps, lidar, magnetometer, sonar  
+        
+        Topics
+        ======
+        The topic will be prefixed with the gazebo namespace
+        and model name:
+        
+        ~/<model_name>/
+        
+        e.g. /gazebo/default/steer_bot_ardupilot/
+        
+        Index
+        =====
+        The sensor::type and sensor::index element are used
+        to associate the sensor with the ArduPilot parameter group that
+        defines the sensor properties such as its position and orientation
+        in the frame.
+      -->
+      <!-- 
+        RNGFND1_TYPE = 100 (SITL)
+        RNGFND1_FUNCTION = 0 (LINEAR)
+        RNGFND1_MIN_CM = 10 (0.1 m)
+        RNGFND1_MAX_CM = 400 (4.0 m)
+        RNGFND1_POS_X = 0.25
+        RNGFND1_POS_Y = 0.0
+        RNGFND1_POS_Z = -0.05
+        RNGFND1_ORIENT = 0 (Forward)
+      -->
+      <sensor>
+        <type>sonar</type>
+        <index>1</index>
+        <topic>sonar_front_link/sensor/sonar</topic>
+      </sensor>
+
+      <!-- 
+        RNGFND2_TYPE = 100 (SITL)
+        RNGFND2_FUNCTION = 0 (LINEAR)
+        RNGFND2_MIN_CM = 10 (0.1 m)
+        RNGFND2_MAX_CM = 400 (4.0 m)
+        RNGFND2_POS_X = -0.25
+        RNGFND2_POS_Y = 0.0
+        RNGFND2_POS_Z = -0.05
+        RNGFND=2_ORIENT = 4 (Back)
+      -->
+      <sensor>
+        <type>sonar</type>
+        <index>2</index>
+        <topic>sonar_back_link/sensor/sonar</topic>
+      </sensor>
+
+      <!-- 
+        RNGFND3_TYPE = 100 (SITL)
+        RNGFND3_FUNCTION = 0 (LINEAR)
+        RNGFND3_MIN_CM = 10 (0.1 m)
+        RNGFND3_MAX_CM = 400 (4.0 m)
+        RNGFND3_POS_X = 0.25
+        RNGFND3_POS_Y = -0.15
+        RNGFND3_POS_Z = -0.05
+        RNGFND3_ORIENT = 7 (Forward-Left)
+      -->
+      <sensor>
+        <type>sonar</type>
+        <index>3</index>
+        <topic>sonar_front_left_link/sensor/sonar</topic>
+      </sensor>
+
+      <!-- 
+        RNGFND4_TYPE = 100 (SITL)
+        RNGFND4_FUNCTION = 0 (LINEAR)
+        RNGFND4_MIN_CM = 10 (0.1 m)
+        RNGFND4_MAX_CM = 400 (4.0 m)
+        RNGFND4_POS_X = 0.25
+        RNGFND4_POS_Y = 0.15
+        RNGFND4_POS_Z = -0.05
+        RNGFND4_ORIENT = 1 (Forward-Right)
+      -->
+      <sensor>
+        <type>sonar</type>
+        <index>4</index>
+        <topic>sonar_front_right_link/sensor/sonar</topic>
+      </sensor>
+
+      <!-- 
+        RNGFND5_TYPE = 100 (SITL)
+        RNGFND5_FUNCTION = 0 (LINEAR)
+        RNGFND5_MIN_CM = 10 (0.1 m)
+        RNGFND5_MAX_CM = 400 (4.0 m)
+        RNGFND5_POS_X = -0.25
+        RNGFND5_POS_Y = -0.15
+        RNGFND5_POS_Z = -0.05
+        RNGFND5_ORIENT = 5 (Back-Left)
+      -->
+      <sensor>
+        <type>sonar</type>
+        <index>5</index>
+        <topic>sonar_back_left_link/sensor/sonar</topic>
+      </sensor>
+
+      <!-- 
+        RNGFND6_TYPE = 100 (SITL)
+        RNGFND6_FUNCTION = 0 (LINEAR)
+        RNGFND6_MIN_CM = 10 (0.1 m)
+        RNGFND6_MAX_CM = 400 (4.0 m)
+        RNGFND6_POS_X = -0.25
+        RNGFND6_POS_Y = 0.15
+        RNGFND6_POS_Z = -0.05
+        RNGFND6_ORIENT = 3 (Back-Right)
+      -->
+      <sensor>
+        <type>sonar</type>
+        <index>6</index>
+        <topic>sonar_back_right_link/sensor/sonar</topic>
+      </sensor>
+
     </plugin>
 
   </model>
