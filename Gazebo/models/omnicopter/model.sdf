@@ -20,7 +20,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>2 2 0.25</size>
+            <size>0.25 0.25 0.25</size>
           </box>
         </geometry>
       </collision>
@@ -273,7 +273,7 @@
       </visual> -->
     </link>
     <joint name='motor_1_joint' type='revolute'>
-      <pose relative_to='base_link'>0.099177 -0.000105 -0.06562 -0.578573156 0 -1.570796327</pose>
+      <pose relative_to='base_link'>0.10147914 0. -0.06590132 0. 0.57595865 0.</pose>
       <parent>base_link</parent>
       <child>motor_1_link</child>
       <axis>
@@ -383,7 +383,7 @@
       </visual> -->
     </link>
     <joint name='motor_2_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.049003 -0.085657 -0.06562 -0.047949431 0.579983382 -2.170945243</pose>
+      <pose relative_to='base_link'>-0.05073957 -0.08788351 -0.06590132 3.30947295e-17 5.75958653e-01 -2.09439510e+00</pose>
       <parent>base_link</parent>
       <child>motor_2_link</child>
       <axis>
@@ -493,7 +493,7 @@
       </visual> -->
     </link>
     <joint name='motor_3_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.049003 0.085447 -0.06562 -0.044626324 -0.586341617 -0.968437823</pose>
+      <pose relative_to='base_link'>-0.05073957 0.08788351 -0.06590132 -3.30947295e-17 5.75958653e-01 2.09439510e+00</pose>
       <parent>base_link</parent>
       <child>motor_3_link</child>
       <axis>
@@ -603,7 +603,7 @@
       </visual> -->
     </link>
     <joint name='motor_4_joint' type='revolute'>
-      <pose relative_to='base_link'>0.048542 -0.085505 0.071226 -1.570796327 0 -1.050588726</pose>
+      <pose relative_to='base_link'>0.04894553 -0.08477614 0.07112202 1.57079633 0. 2.0943951</pose>
       <parent>base_link</parent>
       <child>motor_4_link</child>
       <axis>
@@ -713,7 +713,7 @@
       </visual> -->
     </link>
     <joint name='motor_5_joint' type='revolute'>
-      <pose relative_to='base_link'>-0.097645 -0.001105 0.071226 -1.573517313 0.021842796 0.002164488</pose>
+      <pose relative_to='base_link'>-0.09789106 0. 0.07112202 -1.57079633 0. 0.</pose>
       <parent>base_link</parent>
       <child>motor_5_link</child>
       <axis>
@@ -823,7 +823,7 @@
       </visual> -->
     </link>
     <joint name='motor_6_joint' type='revolute'>
-      <pose relative_to='base_link'>0.048542 0.085296 0.071226 -1.570796327 0 -2.093086105</pose>
+      <pose relative_to='base_link'>0.04894553 0.08477614 0.07112202 -1.57079633 0. -2.0943951</pose>
       <parent>base_link</parent>
       <child>motor_6_link</child>
       <axis>
