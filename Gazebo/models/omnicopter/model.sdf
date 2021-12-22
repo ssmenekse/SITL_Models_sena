@@ -190,7 +190,7 @@
     <link name='motor_1_link'>
       <pose relative_to='motor_1_joint'>0 0 0.018 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 -0.018 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -300,7 +300,7 @@
     <link name='motor_2_link'>
       <pose relative_to='motor_2_joint'>0 0 0.018 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 -0.018 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -410,7 +410,7 @@
     <link name='motor_3_link'>
       <pose relative_to='motor_3_joint'>0 0 0.018 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 -0.018 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -520,7 +520,7 @@
     <link name='motor_4_link'>
       <pose relative_to='motor_4_joint'>0 0 0.018 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 -0.018 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -630,7 +630,7 @@
     <link name='motor_5_link'>
       <pose relative_to='motor_5_joint'>0 0 0.018 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 -0.018 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
@@ -740,7 +740,7 @@
     <link name='motor_6_link'>
       <pose relative_to='motor_6_joint'>0 0 0.018 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 -0.018 0 0 0</pose>
         <mass>0.025</mass>
         <inertia>
           <ixx>9.75e-06</ixx>
