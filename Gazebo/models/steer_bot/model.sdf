@@ -39,7 +39,7 @@
   </link>
 
   <joint name='front_left_steer_joint' type='revolute'>
-    <pose relative_to='base_link'>0.2 0.2 0.12 0 -0 0</pose>
+    <pose relative_to='base_link'>0.2 0.2 0.12 0 0 0</pose>
     <parent>base_link</parent>
     <child>front_left_steer_link</child>
     <axis>
@@ -124,7 +124,7 @@
       </inertia>
     </inertial>
     <collision name='collision'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
       <geometry>
         <cylinder>
           <length>0.08</length>
@@ -149,7 +149,7 @@
   </link>
 
   <joint name='front_right_steer_joint' type='revolute'>
-    <pose relative_to='base_link'>0.2 -0.2 0.12 0 -0 0</pose>
+    <pose relative_to='base_link'>0.2 -0.2 0.12 0 0 0</pose>
     <parent>base_link</parent>
     <child>front_right_steer_link</child>
     <axis>
