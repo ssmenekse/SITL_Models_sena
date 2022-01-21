@@ -21,14 +21,14 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_base_link.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_base_link.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="base_link_visual">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_base_link.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_base_link.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -43,7 +43,7 @@
         </material>
       </visual>
       <!-- save for debugging use -->
-      <visual name="cp_main_wing">
+      <!-- <visual name="cp_main_wing">
         <pose>-0.02 0 0.021946 0 0 0</pose>
         <geometry>
           <sphere>
@@ -146,12 +146,11 @@
           <diffuse>0 1 0</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
         </material>
-      </visual>
-
+      </visual> -->
     </link>
 
     <link name="motor_1">
-      <pose>0.399766589 -0.429365385 0.078118996 -0.052 0 0</pose>
+      <pose>0.399766589 -0.428448099 -0.042066584 -0.052 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
@@ -269,7 +268,7 @@
     </joint>
 
     <link name="motor_3">
-      <pose>0.399766589 0.429365385 0.078118996 0.052 0 0</pose>
+      <pose>0.399766589 0.428448099 -0.042066584 0.052 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
@@ -460,14 +459,14 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_left.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_aileron_left.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_left.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_aileron_left.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -516,14 +515,14 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_right.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_aileron_right.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_right.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_aileron_right.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -572,14 +571,14 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_elevator.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_elevator.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_elevator.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_elevator.dae</uri>
           </mesh>
         </geometry>
         <material>
