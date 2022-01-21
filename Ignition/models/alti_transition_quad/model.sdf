@@ -43,11 +43,11 @@
         </material>
       </visual>
       <!-- save for debugging use -->
-      <!-- <visual name="cp_wing">
-        <pose>0.01 0 0 0 0 0</pose>
+      <visual name="cp_main_wing">
+        <pose>-0.02 0 0.021946 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.03</radius>
+            <radius>0.05</radius>
           </sphere>
         </geometry>
         <material>
@@ -57,10 +57,10 @@
         </material>
       </visual>
       <visual name="cp_left_aileron">
-        <pose>-0.30 0.75 -0.005 0 0 0</pose>
+        <pose>-0.161120956 1.116470319 0.073423477 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.03</radius>
+            <radius>0.02</radius>
           </sphere>
         </geometry>
         <material>
@@ -70,10 +70,10 @@
         </material>
       </visual>
       <visual name="cp_right_aileron">
-        <pose>-0.30 -0.75 -0.005 0 0 0</pose>
+        <pose>-0.161120956 -1.116470319 0.073423477 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.03</radius>
+            <radius>0.02</radius>
           </sphere>
         </geometry>
         <material>
@@ -83,10 +83,10 @@
         </material>
       </visual>
       <visual name="cp_left_winglet">
-        <pose>-0.36 1.04 0.08 0 0 0</pose>
+        <pose>-0.19 1.46 0.15 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.03</radius>
+            <radius>0.015</radius>
           </sphere>
         </geometry>
         <material>
@@ -96,10 +96,10 @@
         </material>
       </visual>
       <visual name="cp_right_winglet">
-        <pose>-0.36 -1.04 0.08 0 0 0</pose>
+        <pose>-0.19 -1.46 0.15 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.03</radius>
+            <radius>0.015</radius>
           </sphere>
         </geometry>
         <material>
@@ -107,7 +107,47 @@
           <diffuse>0 1 0</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
         </material>
-      </visual> -->
+      </visual>
+      <visual name="cp_hstab">
+        <pose>-1.383506602 0 0.213284959 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 0 1</ambient>
+          <diffuse>0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <visual name="cp_left_vstab">
+        <pose>-1.25 0.405 0.1 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <visual name="cp_right_vstab">
+        <pose>-1.25 -0.405 0.1 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 1 0</ambient>
+          <diffuse>0 1 0</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
     </link>
 
     <link name="motor_1">
@@ -443,7 +483,7 @@
       </visual>
     </link>
 
-    <!-- Joint range -30/+30 deg. -->
+    <!-- Joint range -25/+25 deg. -->
     <joint name="left_aileron_joint" type="revolute">
       <parent>base_link</parent>
       <child>left_aileron_link</child>
@@ -451,8 +491,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.53</lower>
-          <upper>0.53</upper>
+          <lower>-0.436332313</lower>
+          <upper>0.436332313</upper>
         </limit>
         <dynamics>
           <damping>0.1</damping>
@@ -499,7 +539,7 @@
       </visual>
     </link>
 
-    <!-- Joint range -30/+30 deg. -->
+    <!-- Joint range -25/+25 deg. -->
     <joint name="right_aileron_joint" type="revolute">
       <parent>base_link</parent>
       <child>right_aileron_link</child>
@@ -507,8 +547,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.53</lower>
-          <upper>0.53</upper>
+          <lower>-0.436332313</lower>
+          <upper>0.436332313</upper>
         </limit>
         <dynamics>
           <damping>0.1</damping>
@@ -555,7 +595,7 @@
       </visual>
     </link>
 
-    <!-- Joint range -30/+30 deg. -->
+    <!-- Joint range -25/+25 deg. -->
     <joint name="elevator_joint" type="revolute">
       <parent>base_link</parent>
       <child>elevator_link</child>
@@ -563,8 +603,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.53</lower>
-          <upper>0.53</upper>
+          <lower>-0.436332313</lower>
+          <upper>0.436332313</upper>
         </limit>
         <dynamics>
           <damping>0.1</damping>
@@ -789,7 +829,7 @@
       <upward>0 0 1</upward>
       <link_name>motor_f</link_name>
     </plugin>
-    <!-- wing lift-drag -->
+    <!-- main_wing lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.13</a0>
@@ -800,8 +840,8 @@
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>0.01 0 0</cp>
-      <area>0.80</area>
+      <cp>-0.02 0 0.021946</cp>
+      <area>0.8306432</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
@@ -818,8 +858,8 @@
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.30 0.75 -0.005</cp>
-      <area>0.10</area>
+      <cp>-0.161120956 1.116470319 0.073423477</cp>
+      <area>0.031165499</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
@@ -838,8 +878,8 @@
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.30 -0.75 -0.005</cp>
-      <area>0.10</area>
+      <cp>-0.161120956 -1.116470319 0.073423477</cp>
+      <area>0.031165499</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
@@ -858,8 +898,8 @@
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.36 1.04 0.08</cp>
-      <area>0.12</area>
+      <cp>-0.19 1.46 0.15</cp>
+      <area>0.0152</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 1 0</upward>
@@ -876,8 +916,82 @@
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.36 -1.04 0.08</cp>
-      <area>0.12</area>
+      <cp>-0.19 -1.46 0.15</cp>
+      <area>0.0152</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 -1 0</upward>
+      <link_name>base_link</link_name>
+    </plugin>
+    <!-- hstab lift-drag -->
+    <plugin filename="libignition-gazebo-lift-drag-system.so"
+        name="ignition::gazebo::systems::LiftDrag">
+      <a0>0.13</a0>
+      <cla>3.7</cla>
+      <cda>0.06417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-1.383506602 0 0.213284959</cp>
+      <area>0.0864</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>base_link</link_name>
+    </plugin>
+    <!-- elevator lift-drag -->
+    <plugin filename="libignition-gazebo-lift-drag-system.so"
+        name="ignition::gazebo::systems::LiftDrag">
+      <a0>0.15</a0>
+      <cla>6.8</cla>
+      <cda>0.06417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.6391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-1.383506602 0 0.213284959</cp>
+      <area>0.02376</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>elevator_joint</control_joint_name>
+      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+    </plugin>
+    <!-- left_vstab lift-drag -->
+    <plugin filename="libignition-gazebo-lift-drag-system.so"
+        name="ignition::gazebo::systems::LiftDrag">
+      <a0>0.0</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-1.25 0.405 0.1</cp>
+      <area>0.0378</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 1 0</upward>
+      <link_name>base_link</link_name>
+    </plugin>
+    <!-- right_vstab lift-drag -->
+    <plugin filename="libignition-gazebo-lift-drag-system.so"
+        name="ignition::gazebo::systems::LiftDrag">
+      <a0>0.0</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-1.25 -0.405 0.1</cp>
+      <area>0.0378</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 -1 0</upward>
@@ -952,7 +1066,7 @@
       <control channel="0">
         <jointName>left_aileron_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-1.048</multiplier>
+        <multiplier>-0.872664626</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
@@ -969,7 +1083,7 @@
       <control channel="0">
         <jointName>right_aileron_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>1.048</multiplier>
+        <multiplier>0.872664626</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
@@ -993,7 +1107,7 @@
       <control channel="1">
         <jointName>elevator_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>1.048</multiplier>
+        <multiplier>0.872664626</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
