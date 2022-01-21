@@ -111,7 +111,7 @@
     </link>
 
     <link name="motor_1">
-      <pose>0.399766589 -0.429365385 0.078118996 0 0 0</pose>
+      <pose>0.399766589 -0.429365385 0.078118996 -0.052 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
@@ -133,15 +133,6 @@
           </cylinder>
         </geometry>
       </collision>
-      <!-- <visual name="visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.2286</radius>
-          </cylinder>
-        </geometry>
-      </visual> -->
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -179,7 +170,7 @@
     </joint>
 
     <link name="motor_2">
-      <pose>-0.466782469 0.429388845 0.085456111 0 0 0</pose>
+      <pose>-0.466782469 0.429388845 0.085456111 0.052 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
@@ -201,15 +192,6 @@
           </cylinder>
         </geometry>
       </collision>
-      <!-- <visual name="visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.2286</radius>
-          </cylinder>
-        </geometry>
-      </visual> -->
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -247,7 +229,7 @@
     </joint>
 
     <link name="motor_3">
-      <pose>0.399766589 0.429365385 0.078118996 0 0 0</pose>
+      <pose>0.399766589 0.429365385 0.078118996 0.052 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
@@ -269,15 +251,6 @@
           </cylinder>
         </geometry>
       </collision>
-      <!-- <visual name="visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.2286</radius>
-          </cylinder>
-        </geometry>
-      </visual> -->
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -315,7 +288,7 @@
     </joint>
 
     <link name="motor_4">
-      <pose>-0.466782469 -0.429388845 0.085456111 0 0 0</pose>
+      <pose>-0.466782469 -0.429388845 0.085456111 -0.052 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.025</mass>
@@ -337,15 +310,6 @@
           </cylinder>
         </geometry>
       </collision>
-      <!-- <visual name="visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.2286</radius>
-          </cylinder>
-        </geometry>
-      </visual> -->
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -404,15 +368,6 @@
           </cylinder>
         </geometry>
       </collision>
-      <!-- <visual name="visual">
-        <pose>0.0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.2286</radius>
-          </cylinder>
-        </geometry>
-      </visual> -->
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -976,7 +931,7 @@
       <control channel="0">
         <jointName>left_aileron_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>1.048</multiplier>
+        <multiplier>-1.048</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
@@ -993,7 +948,7 @@
       <control channel="0">
         <jointName>right_aileron_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-1.048</multiplier>
+        <multiplier>1.048</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
@@ -1047,7 +1002,7 @@
       <control channel="2">
         <jointName>motor_f_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>838</multiplier>
+        <multiplier>-838</multiplier>
         <offset>0</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
