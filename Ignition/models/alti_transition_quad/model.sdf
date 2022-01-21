@@ -404,7 +404,7 @@
       </axis>
     </joint>
 
-    <link name="left_aileron">
+    <link name="left_aileron_link">
       <pose relative_to="left_aileron_joint">0 0 0 -0.087266463 0 -0.034906585</pose>
       <inertial>
         <mass>0.1</mass>
@@ -417,6 +417,13 @@
           <izz>0.003446072</izz>
         </inertia>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_left.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
@@ -439,7 +446,7 @@
     <!-- Joint range -30/+30 deg. -->
     <joint name="left_aileron_joint" type="revolute">
       <parent>base_link</parent>
-      <child>left_aileron</child>
+      <child>left_aileron_link</child>
       <pose relative_to="base_link">-0.163120956 1.122682319 0.073423477 0.087266463 0 0.034906585</pose>
       <axis>
         <xyz>0 1 0</xyz>
@@ -453,7 +460,7 @@
       </axis>
     </joint>
 
-    <link name="right_aileron">
+    <link name="right_aileron_link">
       <pose relative_to="right_aileron_joint">0 0 0 0.087266463 0 0.034906585</pose>
       <inertial>
         <mass>0.1</mass>
@@ -466,6 +473,13 @@
           <izz>0.003446072</izz>
         </inertia>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_right.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
@@ -488,7 +502,7 @@
     <!-- Joint range -30/+30 deg. -->
     <joint name="right_aileron_joint" type="revolute">
       <parent>base_link</parent>
-      <child>right_aileron</child>
+      <child>right_aileron_link</child>
       <pose relative_to="base_link">-0.161120956 -1.116470319 0.073423477 -0.087266463 0 -0.034906585</pose>
       <axis>
         <xyz>0 1 0</xyz>
@@ -515,6 +529,13 @@
           <izz>0.003446072</izz>
         </inertia>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_elevator.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
