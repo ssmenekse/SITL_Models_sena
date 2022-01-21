@@ -3,7 +3,7 @@
   <model name="alti_transition_quad">
     <pose>0 0 0 0 0 0</pose>
 
-    <link name='base_link'>
+    <link name="base_link">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -17,7 +17,7 @@
           <izz>0.75</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_collision'>
+      <collision name="base_link_collision">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
@@ -25,7 +25,7 @@
           </mesh>
         </geometry>
       </collision>
-      <visual name='base_link_visual'>
+      <visual name="base_link_visual">
         <geometry>
           <mesh>
             <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_base_link.dae</uri>
@@ -42,30 +42,6 @@
           </pbr>
         </material>
       </visual>
-      <visual name='aileron_left'>
-        <pose>-0.163120956 1.122682319 0.073423477 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_left.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name='aileron_right'>
-        <pose>-0.161120956 -1.116470319 0.073423477 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_right.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name='elevator'>
-        <pose>-1.383506602 0 0.213284959 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_elevator.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
       <!-- save for debugging use -->
       <!-- <visual name="cp_wing">
         <pose>0.01 0 0 0 0 0</pose>
@@ -80,7 +56,7 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <visual name="cp_left_elevon">
+      <visual name="cp_left_aileron">
         <pose>-0.30 0.75 -0.005 0 0 0</pose>
         <geometry>
           <sphere>
@@ -93,7 +69,7 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <visual name="cp_right_elevon">
+      <visual name="cp_right_aileron">
         <pose>-0.30 -0.75 -0.005 0 0 0</pose>
         <geometry>
           <sphere>
@@ -134,7 +110,7 @@
       </visual> -->
     </link>
 
-    <link name='motor_1'>
+    <link name="motor_1">
       <pose>0.399766589 -0.429365385 0.078118996 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -148,7 +124,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='collision'>
+      <collision name="collision">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -157,7 +133,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='visual'>
+      <!-- <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -165,13 +141,13 @@
             <radius>0.2286</radius>
           </cylinder>
         </geometry>
-      </visual>
-      <!-- <visual name='visual'>
+      </visual> -->
+      <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://alti_transition_quad/meshes/iris_prop_cw.dae</uri>
+            <scale>1.7 1.7 1.7</scale>
+            <uri>model://alti_transition_quad/meshes/prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -184,9 +160,9 @@
             </metal>
           </pbr>
         </material>
-      </visual> -->
+      </visual>
     </link>
-    <joint name='motor_1_joint' type='revolute'>
+    <joint name="motor_1_joint" type="revolute">
       <child>motor_1</child>
       <parent>base_link</parent>
       <axis>
@@ -202,7 +178,7 @@
       </axis>
     </joint>
 
-    <link name='motor_2'>
+    <link name="motor_2">
       <pose>-0.466782469 0.429388845 0.085456111 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -216,7 +192,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='collision'>
+      <collision name="collision">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -225,7 +201,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='visual'>
+      <!-- <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -233,13 +209,13 @@
             <radius>0.2286</radius>
           </cylinder>
         </geometry>
-      </visual>
-      <!-- <visual name='visual'>
+      </visual> -->
+      <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://alti_transition_quad/meshes/iris_prop_cw.dae</uri>
+            <scale>1.7 1.7 1.7</scale>
+            <uri>model://alti_transition_quad/meshes/prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -252,9 +228,9 @@
             </metal>
           </pbr>
         </material>
-      </visual> -->
+      </visual>
     </link>
-    <joint name='motor_2_joint' type='revolute'>
+    <joint name="motor_2_joint" type="revolute">
       <child>motor_2</child>
       <parent>base_link</parent>
       <axis>
@@ -270,7 +246,7 @@
       </axis>
     </joint>
 
-    <link name='motor_3'>
+    <link name="motor_3">
       <pose>0.399766589 0.429365385 0.078118996 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -284,7 +260,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='collision'>
+      <collision name="collision">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -293,7 +269,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='visual'>
+      <!-- <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -301,13 +277,13 @@
             <radius>0.2286</radius>
           </cylinder>
         </geometry>
-      </visual>
-      <!-- <visual name='visual'>
+      </visual> -->
+      <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://alti_transition_quad/meshes/iris_prop_ccw.dae</uri>
+            <scale>1.7 1.7 1.7</scale>
+            <uri>model://alti_transition_quad/meshes/prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -320,9 +296,9 @@
             </metal>
           </pbr>
         </material>
-      </visual> -->
+      </visual>
     </link>
-    <joint name='motor_3_joint' type='revolute'>
+    <joint name="motor_3_joint" type="revolute">
       <child>motor_3</child>
       <parent>base_link</parent>
       <axis>
@@ -338,7 +314,7 @@
       </axis>
     </joint>
 
-    <link name='motor_4'>
+    <link name="motor_4">
       <pose>-0.466782469 -0.429388845 0.085456111 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -352,7 +328,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='collision'>
+      <collision name="collision">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -361,7 +337,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='visual'>
+      <!-- <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -369,13 +345,13 @@
             <radius>0.2286</radius>
           </cylinder>
         </geometry>
-      </visual>
-      <!-- <visual name='visual'>
+      </visual> -->
+      <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://alti_transition_quad/meshes/iris_prop_ccw.dae</uri>
+            <scale>1.7 1.7 1.7</scale>
+            <uri>model://alti_transition_quad/meshes/prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -388,9 +364,9 @@
             </metal>
           </pbr>
         </material>
-      </visual> -->
+      </visual>
     </link>
-    <joint name='motor_4_joint' type='revolute'>
+    <joint name="motor_4_joint" type="revolute">
       <child>motor_4</child>
       <parent>base_link</parent>
       <axis>
@@ -406,8 +382,8 @@
       </axis>
     </joint>
 
-    <link name='motor_f'>
-      <pose>-0.462542074 0 -0.014101091 0 1.57 0</pose>
+    <link name="motor_f">
+      <pose>-0.462542074 0 -0.014101091 0 -1.570796327 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -419,7 +395,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='collision'>
+      <collision name="collision">
         <pose>0.0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -428,7 +404,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='visual'>
+      <!-- <visual name="visual">
         <pose>0.0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -436,13 +412,13 @@
             <radius>0.2286</radius>
           </cylinder>
         </geometry>
-      </visual>
-      <!-- <visual name='visual'>
+      </visual> -->
+      <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.8 0.8 0.8</scale>
-            <uri>model://alti_transition_quad/meshes/iris_prop_ccw.dae</uri>
+            <scale>1.7 1.7 1.7</scale>
+            <uri>model://alti_transition_quad/meshes/prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -455,9 +431,9 @@
             </metal>
           </pbr>
         </material>
-      </visual> -->
+      </visual>
     </link>
-    <joint name='motor_f_joint' type='revolute'>
+    <joint name="motor_f_joint" type="revolute">
       <child>motor_f</child>
       <parent>base_link</parent>
       <axis>
@@ -473,7 +449,8 @@
       </axis>
     </joint>
 
-    <link name="left_elevon">
+    <link name="left_aileron">
+      <pose relative_to="left_aileron_joint">0 0 0 -0.087266463 0 -0.034906585</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -484,12 +461,11 @@
           <iyz>0</iyz>
           <izz>0.003446072</izz>
         </inertia>
-        <pose>-0.30 0.75 -0.005 0 0 0</pose>
       </inertial>
-      <!-- <visual name='visual'>
+      <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://alti_transition_quad/meshes/x8_elevon_left.dae</uri>
+            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_left.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -497,51 +473,19 @@
           <specular>1.0 1.0 1.0</specular>
           <pbr>
             <metal>
-                <albedo_map>model://alti_transition_quad/materials/textures/x8.tga</albedo_map>
+                <albedo_map>model://alti_transition_quad/materials/textures/AltiTransitionMap.png</albedo_map>
                 <metalness>0.1</metalness>
             </metal>
           </pbr>
         </material>
-      </visual> -->
-    </link>
-
-    <link name="right_elevon">
-      <inertial>
-        <mass>0.1</mass>
-        <inertia>
-          <ixx>0.000102319</ixx>
-          <ixy>0</ixy>
-          <iyy>0.00334417</iyy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
-          <izz>0.003446072</izz>
-        </inertia>
-        <pose>-0.30 -0.75 -0.005 0 0 0</pose>
-      </inertial>
-      <!-- <visual name='visual'>
-        <geometry>
-          <mesh>
-            <uri>model://alti_transition_quad/meshes/x8_elevon_right.dae</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-                <albedo_map>model://alti_transition_quad/materials/textures/x8.tga</albedo_map>
-                <metalness>0.1</metalness>
-            </metal>
-          </pbr>
-        </material>
-      </visual> -->
+      </visual>
     </link>
 
     <!-- Joint range -30/+30 deg. -->
-    <joint name='left_elevon_joint' type='revolute'>
+    <joint name="left_aileron_joint" type="revolute">
       <parent>base_link</parent>
-      <child>left_elevon</child>
-      <pose>-0.27 0.6 -0.005 0 0 0.265</pose>
+      <child>left_aileron</child>
+      <pose relative_to="base_link">-0.163120956 1.122682319 0.073423477 0.087266463 0 0.034906585</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -553,12 +497,93 @@
         </dynamics>
       </axis>
     </joint>
-    
+
+    <link name="right_aileron">
+      <pose relative_to="right_aileron_joint">0 0 0 0.087266463 0 0.034906585</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000102319</ixx>
+          <ixy>0</ixy>
+          <iyy>0.00334417</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.003446072</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_aileron_right.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+                <albedo_map>model://alti_transition_quad/materials/textures/AltiTransitionMap.png</albedo_map>
+                <metalness>0.1</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+
     <!-- Joint range -30/+30 deg. -->
-    <joint name='right_elevon_joint' type='revolute'>
+    <joint name="right_aileron_joint" type="revolute">
       <parent>base_link</parent>
-      <child>right_elevon</child>
-      <pose>-0.27 -0.6 -0.005 0 0 -0.265</pose>
+      <child>right_aileron</child>
+      <pose relative_to="base_link">-0.161120956 -1.116470319 0.073423477 -0.087266463 0 -0.034906585</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="elevator_link">
+      <pose relative_to="elevator_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000102319</ixx>
+          <ixy>0</ixy>
+          <iyy>0.00334417</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.003446072</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://alti_transition_quad/meshes/alti_transition_quadplane_v4_elevator.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+                <albedo_map>model://alti_transition_quad/materials/textures/AltiTransitionMap.png</albedo_map>
+                <metalness>0.1</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Joint range -30/+30 deg. -->
+    <joint name="elevator_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>elevator_link</child>
+      <pose relative_to="base_link">-1.383506602 0 0.213284959 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -572,7 +597,7 @@
     </joint>
 
     <!-- sensors -->
-    <link name='imu_link'>
+    <link name="imu_link">
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.15</mass>
@@ -591,7 +616,7 @@
         <update_rate>1000.0</update_rate>
       </sensor>
     </link>
-    <joint name='imu_joint' type='revolute'>
+    <joint name="imu_joint" type="revolute">
       <child>imu_link</child>
       <parent>base_link</parent>
       <axis>
@@ -613,7 +638,7 @@
     <plugin filename="libignition-gazebo-joint-state-publisher-system.so"
       name="ignition::gazebo::systems::JointStatePublisher">
     </plugin>
-    <!-- motor_1 lift-drag -->
+    <!-- motor_1 (cw) lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.3</a0>
@@ -648,7 +673,7 @@
       <upward>0 0 1</upward>
       <link_name>motor_1</link_name>
     </plugin>
-    <!-- motor_2 lift-drag -->
+    <!-- motor_2 (cw) lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.3</a0>
@@ -683,7 +708,7 @@
       <upward>0 0 1</upward>
       <link_name>motor_2</link_name>
     </plugin>
-    <!-- motor_3 lift-drag -->
+    <!-- motor_3 (ccw) lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.3</a0>
@@ -718,7 +743,7 @@
       <upward>0 0 1</upward>
       <link_name>motor_3</link_name>
     </plugin>
-    <!-- motor_4 lift-drag -->
+    <!-- motor_4 (ccw) lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.3</a0>
@@ -753,7 +778,7 @@
       <upward>0 0 1</upward>
       <link_name>motor_4</link_name>
     </plugin>
-    <!-- motor_f lift-drag -->
+    <!-- motor_f (ccw) lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.30</a0>
@@ -806,7 +831,7 @@
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
     </plugin>
-    <!-- left_elevon lift-drag -->
+    <!-- left_aileron lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.15</a0>
@@ -823,10 +848,10 @@
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
-      <control_joint_name>left_elevon_joint</control_joint_name>
+      <control_joint_name>left_aileron_joint</control_joint_name>
       <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
     </plugin>
-    <!-- right_elevon lift-drag -->
+    <!-- right_aileron lift-drag -->
     <plugin filename="libignition-gazebo-lift-drag-system.so"
         name="ignition::gazebo::systems::LiftDrag">
       <a0>0.15</a0>
@@ -843,7 +868,7 @@
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
-      <control_joint_name>right_elevon_joint</control_joint_name>
+      <control_joint_name>right_aileron_joint</control_joint_name>
       <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
     </plugin>
     <!-- left_winglet lift-drag -->
@@ -905,11 +930,11 @@
     </plugin>
     <plugin filename="libignition-gazebo-apply-joint-force-system.so"
       name="ignition::gazebo::systems::ApplyJointForce">
-      <joint_name>left_elevon_joint</joint_name>
+      <joint_name>left_aileron_joint</joint_name>
     </plugin>
     <plugin filename="libignition-gazebo-apply-joint-force-system.so"
       name="ignition::gazebo::systems::ApplyJointForce">
-      <joint_name>right_elevon_joint</joint_name>
+      <joint_name>right_aileron_joint</joint_name>
     </plugin>
 
     <plugin name="ArduPilotPlugin" filename="libArduPilotPlugin.so">
@@ -935,13 +960,76 @@
       <!-- Sensors -->
       <imuName>imu_sensor</imuName>
 
-      <!--
-          incoming control command [0, 1]
-          so offset it by 0 to get [0, 1]
-          and divide max target by 1.
-          offset = 0
-          multiplier = 838 max rpm / 1 = 838
-        -->
+      <!-- 
+          SERVO1_FUNCTION   4 (Aileron)
+          SERVO1_MAX        2000
+          SERVO1_MIN        1000
+          SERVO1_REVERSED   0
+          SERVO1_TRIM       1500
+
+          pwm:          =>  [1100, 1900] 
+          input:        =>  [0, 1]
+          offset: -0.5  =>  [-0.5, 0.5]
+          scale:   2.0  =>  [-1.0, 1.0]
+          scale: 0.524  =>  [-0.524, 0.524]
+       -->
+      <control channel="0">
+        <jointName>left_aileron_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>1.048</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>POSITION</type>
+        <p_gain>10.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+      </control>
+
+      <control channel="0">
+        <jointName>right_aileron_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-1.048</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>POSITION</type>
+        <p_gain>10.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+      </control>
+
+      <!-- 
+          SERVO2_FUNCTION   19 (Elevator)
+          SERVO2_MAX        2000
+          SERVO2_MIN        1000
+          SERVO2_REVERSED   0
+          SERVO2_TRIM       1500
+       -->
+      <control channel="1">
+        <jointName>elevator_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>1.048</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>POSITION</type>
+        <p_gain>10.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+      </control>
 
       <!-- 
           SERVO3_FUNCTION   70 (Throttle)
@@ -949,6 +1037,12 @@
           SERVO3_MIN        1000
           SERVO3_REVERSED   0
           SERVO3_TRIM       1000
+
+          incoming control command [0, 1]
+          so offset it by 0 to get [0, 1]
+          and divide max target by 1.
+          offset = 0
+          multiplier = 838 max rpm / 1 = 838
        -->
       <control channel="2">
         <jointName>motor_f_joint</jointName>
@@ -967,64 +1061,11 @@
         <cmd_min>-2.5</cmd_min>
       </control>
 
-      <!-- 
-          SERVO1_FUNCTION   77 (Elevon Left)
-          SERVO1_MAX        1900
-          SERVO1_MIN        1100
-          SERVO1_REVERSED   0
-          SERVO1_TRIM       1500
-
-          pwm:          =>  [1100, 1900] 
-          input:        =>  [0, 1]
-          offset: -0.5  =>  [-0.5, 0.5]
-          scale:   2.0  =>  [-1.0, 1.0]
-          scale: 0.524  =>  [-0.524, 0.524]
-       -->
-      <control channel="0">
-        <jointName>left_elevon_joint</jointName>
-        <useForce>1</useForce>
-        <multiplier>1.048</multiplier>
-        <offset>-0.5</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
-        <type>POSITION</type>
-        <p_gain>10.0</p_gain>
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>0</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
-      </control>
 
       <!-- 
-          SERVO2_FUNCTION   78 (Elevon Right)
-          SERVO2_MAX        1900
-          SERVO2_MIN        1100
-          SERVO2_REVERSED   0
-          SERVO2_TRIM       1500
-       -->
-      <control channel="1">
-        <jointName>right_elevon_joint</jointName>
-        <useForce>1</useForce>
-        <multiplier>1.048</multiplier>
-        <offset>-0.5</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
-        <type>POSITION</type>
-        <p_gain>10.0</p_gain>
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>0</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
-      </control>
-
-      <!-- 
-          SERVO5_FUNCTION   33 (Motor1 Front Right CCW)
-          SERVO5_MAX        1900
-          SERVO5_MIN        1100
+          SERVO5_FUNCTION   33 (Motor1 Front Right CW)
+          SERVO5_MAX        2000
+          SERVO5_MIN        1000
           SERVO5_REVERSED   0
           SERVO5_TRIM       1500
        -->
@@ -1033,8 +1074,8 @@
         <useForce>1</useForce>
         <multiplier>-1500</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1046,9 +1087,9 @@
       </control>
 
       <!-- 
-          SERVO6_FUNCTION   34 (Motor2 Rear Left CCW)
-          SERVO6_MAX        1900
-          SERVO6_MIN        1100
+          SERVO6_FUNCTION   34 (Motor2 Rear Left CW)
+          SERVO6_MAX        2000
+          SERVO6_MIN        1000
           SERVO6_REVERSED   0
           SERVO6_TRIM       1500
        -->
@@ -1057,8 +1098,8 @@
         <useForce>1</useForce>
         <multiplier>-1500</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1070,9 +1111,9 @@
       </control>
 
       <!-- 
-          SERVO7_FUNCTION   35 (Motor3 Front Left CW)
-          SERVO7_MAX        1900
-          SERVO7_MIN        1100
+          SERVO7_FUNCTION   35 (Motor3 Front Left CCW)
+          SERVO7_MAX        2000
+          SERVO7_MIN        1000
           SERVO7_REVERSED   0
           SERVO7_TRIM       1500
        -->
@@ -1081,8 +1122,8 @@
         <useForce>1</useForce>
         <multiplier>1500</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1094,9 +1135,9 @@
       </control>
 
       <!-- 
-          SERVO8_FUNCTION   36 (Motor4 Rear Right CW)
-          SERVO8_MAX        1900
-          SERVO8_MIN        1100
+          SERVO8_FUNCTION   36 (Motor4 Rear Right CCW)
+          SERVO8_MAX        2000
+          SERVO8_MIN        1000
           SERVO8_REVERSED   0
           SERVO8_TRIM       1500
        -->
@@ -1105,8 +1146,8 @@
         <useForce>1</useForce>
         <multiplier>1500</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
