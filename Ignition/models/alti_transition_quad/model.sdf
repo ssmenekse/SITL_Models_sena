@@ -1136,7 +1136,7 @@
       <control channel="2">
         <jointName>motor_f_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-838</multiplier>
+        <multiplier>-1500</multiplier>
         <offset>0</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
