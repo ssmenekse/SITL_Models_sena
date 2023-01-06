@@ -1,0 +1,248 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="4bar_link">
+    <plugin filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+
+    <scene>
+      <ambient>1.0 1.0 1.0</ambient>
+      <background>0.8 0.8 0.8</background>
+      <sky></sky>
+    </scene>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.8 0.8 0.8 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+
+
+    <model name="4bar_link">
+      <pose>0 0 0.05 0 0 0</pose>
+      <link name="link1">
+        <pose>0 0.5 0 0 0 0</pose>
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.001666667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.084166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.084166667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.175 0.175 0.175 1</ambient>
+            <diffuse>0.175 0.175 0.175 1</diffuse>
+            <specular>0.175 0.175 0.175 1</specular>
+          </material>
+        </visual>
+      </link>
+      <link name="link2">
+        <pose>0.5 0 0 0 0 -1.5708</pose>
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.001666667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.084166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.084166667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.175 0.175 0.175 1</ambient>
+            <diffuse>0.175 0.175 0.175 1</diffuse>
+            <specular>0.175 0.175 0.175 1</specular>
+          </material>
+        </visual>
+      </link>
+      <joint name="link12_joint" type="revolute">
+        <pose>-0.5 0 0 0 0 0</pose>
+        <parent>link1</parent>
+        <child>link2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+          </limit>
+          <dynamics>
+            <damping>0.1</damping>
+          </dynamics>
+        </axis>
+      </joint>
+  
+      <link name="link3">
+        <pose>0 -0.5 0 0 0 0</pose>
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.001666667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.084166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.084166667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.175 0.175 0.175 1</ambient>
+            <diffuse>0.175 0.175 0.175 1</diffuse>
+            <specular>0.175 0.175 0.175 1</specular>
+          </material>
+        </visual>
+      </link>
+      <joint name="link23_joint" type="revolute">
+        <pose>0.5 0 0 0 0 0</pose>
+        <parent>link2</parent>
+        <child>link3</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+          </limit>
+          <dynamics>
+            <damping>0.1</damping>
+          </dynamics>
+        </axis>
+      </joint>
+
+      <link name="link4">
+        <pose>-0.5 0 0 0 0 1.5708</pose>
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.001666667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.084166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.084166667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.175 0.175 0.175 1</ambient>
+            <diffuse>0.175 0.175 0.175 1</diffuse>
+            <specular>0.175 0.175 0.175 1</specular>
+          </material>
+        </visual>
+      </link>
+      <joint name="link34_joint" type="revolute">
+        <pose>-0.5 0 0 0 0 0</pose>
+        <parent>link3</parent>
+        <child>link4</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+          </limit>
+          <dynamics>
+            <damping>0.1</damping>
+          </dynamics>
+        </axis>
+      </joint>
+
+      <!--
+      [Err] [SDFFeatures.cc:1087] Asked to create a closed kinematic chain between links [link4] and [link1], but that is not supported by the dartsim wrapper yet.
+      [Err] [SDFFeatures.cc:1087] Asked to create a closed kinematic chain between links [link4] and [link1], but that is not supported by the dartsim wrapper yet.
+      -->
+      <joint name="link41_joint" type="revolute">
+        <pose>-0.5 0 0 0 0 0</pose>
+        <parent>link4</parent>
+        <child>link1</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+          </limit>
+          <dynamics>
+            <damping>0.1</damping>
+          </dynamics>
+        </axis>
+      </joint>
+
+
+    </model>
+
+  </world>
+</sdf>
