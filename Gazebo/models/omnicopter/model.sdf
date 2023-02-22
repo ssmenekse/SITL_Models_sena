@@ -931,6 +931,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_1_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/omnicopter/link/motor_1_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
@@ -948,6 +954,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_1_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/omnicopter/link/motor_1_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- prop motor_2 (cw) lift-drag -->
@@ -967,6 +979,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_2_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/omnicopter/link/motor_2_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
@@ -984,6 +1002,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_2_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/omnicopter/link/motor_2_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- prop motor_3 (ccw) lift-drag -->
@@ -1003,6 +1027,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_3_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/omnicopter/link/motor_3_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
@@ -1020,6 +1050,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_3_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/omnicopter/link/motor_3_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- prop motor_4 (ccw) lift-drag -->
@@ -1039,6 +1075,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_4_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/omnicopter/link/motor_4_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
@@ -1056,6 +1098,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_4_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/omnicopter/link/motor_4_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- prop motor_5 (cw) lift-drag -->
@@ -1075,6 +1123,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_5_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/omnicopter/link/motor_5_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
@@ -1092,6 +1146,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_5_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/omnicopter/link/motor_5_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- prop motor_6 (ccw) lift-drag -->
@@ -1111,6 +1171,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_6_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/omnicopter/link/motor_6_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
@@ -1128,6 +1194,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_6_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/omnicopter/link/motor_6_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">

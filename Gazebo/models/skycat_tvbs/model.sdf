@@ -591,6 +591,15 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_left_link</link_name>
+      <visualize>1</visualize>
+      <visualize_rate>60</visualize_rate>
+      <visualize_label>Blade1</visualize_label>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/skycat_tvbs/link/motor_left_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="libgz-sim-lift-drag-system.so"
         name="gz::sim::systems::LiftDrag">
@@ -608,6 +617,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_left_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/skycat_tvbs/link/motor_left_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- prop_right (ccw) lift-drag -->
@@ -627,6 +642,12 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_right_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade1</label>
+        <topic>/model/skycat_tvbs/link/motor_right_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <plugin filename="libgz-sim-lift-drag-system.so"
         name="gz::sim::systems::LiftDrag">
@@ -644,6 +665,12 @@
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_right_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Blade2</label>
+        <topic>/model/skycat_tvbs/link/motor_right_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <!-- wing lift-drag -->
@@ -663,6 +690,12 @@
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>Wing</label>
+        <topic>/model/skycat_tvbs/link/base_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <!-- left_elevon lift-drag -->
     <plugin filename="libgz-sim-lift-drag-system.so"
@@ -683,6 +716,12 @@
       <link_name>base_link</link_name>
       <control_joint_name>elevon_left_joint</control_joint_name>
       <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>LeftElevon</label>
+        <topic>/model/skycat_tvbs/link/base_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <!-- right_elevon lift-drag -->
     <plugin filename="libgz-sim-lift-drag-system.so"
@@ -703,6 +742,12 @@
       <link_name>base_link</link_name>
       <control_joint_name>elevon_right_joint</control_joint_name>
       <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>RightElevon</label>
+        <topic>/model/skycat_tvbs/link/base_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <!-- left_winglet lift-drag -->
     <plugin filename="libgz-sim-lift-drag-system.so"
@@ -721,6 +766,12 @@
       <forward>1 0 0</forward>
       <upward>0 1 0</upward>
       <link_name>base_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>LeftWinglet</label>
+        <topic>/model/skycat_tvbs/link/base_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
     <!-- right_winglet lift-drag -->
     <plugin filename="libgz-sim-lift-drag-system.so"
@@ -739,6 +790,12 @@
       <forward>1 0 0</forward>
       <upward>0 -1 0</upward>
       <link_name>base_link</link_name>
+      <visualize_forces>
+        <visualize>1</visualize>
+        <update_rate>60</update_rate>
+        <label>RightWinglet</label>
+        <topic>/model/skycat_tvbs/link/base_link/forces/lift_drag</topic>
+      </visualize_forces>
     </plugin>
 
     <plugin filename="libgz-sim-apply-joint-force-system.so"
