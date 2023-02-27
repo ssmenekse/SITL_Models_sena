@@ -889,7 +889,7 @@
     <plugin filename="gz-sim-joint-state-publisher-system"
       name="gz::sim::systems::JointStatePublisher">
     </plugin>
-    <plugin filename="gz-sim-apply-joint-force-system"
+    <!-- <plugin filename="gz-sim-apply-joint-force-system"
       name="gz::sim::systems::ApplyJointForce">
       <joint_name>motor_1_joint</joint_name>
     </plugin>
@@ -912,10 +912,10 @@
     <plugin filename="gz-sim-apply-joint-force-system"
       name="gz::sim::systems::ApplyJointForce">
       <joint_name>motor_6_joint</joint_name>
-    </plugin>
+    </plugin> -->
 
     <!-- prop motor_1 (cw) lift-drag -->
-    <plugin filename="gz-sim-lift-drag-system"
+    <!-- <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -960,10 +960,10 @@
         <label>Blade2</label>
         <topic>/model/omnicopter/link/motor_1_link/forces/lift_drag</topic>
       </visualize_forces>
-    </plugin>
+    </plugin> -->
 
     <!-- prop motor_2 (cw) lift-drag -->
-    <plugin filename="gz-sim-lift-drag-system"
+    <!-- <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -1008,10 +1008,10 @@
         <label>Blade2</label>
         <topic>/model/omnicopter/link/motor_2_link/forces/lift_drag</topic>
       </visualize_forces>
-    </plugin>
+    </plugin> -->
 
     <!-- prop motor_3 (ccw) lift-drag -->
-    <plugin filename="gz-sim-lift-drag-system"
+    <!-- <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -1056,10 +1056,10 @@
         <label>Blade2</label>
         <topic>/model/omnicopter/link/motor_3_link/forces/lift_drag</topic>
       </visualize_forces>
-    </plugin>
+    </plugin> -->
 
     <!-- prop motor_4 (ccw) lift-drag -->
-    <plugin filename="gz-sim-lift-drag-system"
+    <!-- <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -1104,10 +1104,10 @@
         <label>Blade2</label>
         <topic>/model/omnicopter/link/motor_4_link/forces/lift_drag</topic>
       </visualize_forces>
-    </plugin>
+    </plugin> -->
 
     <!-- prop motor_5 (cw) lift-drag -->
-    <plugin filename="gz-sim-lift-drag-system"
+    <!-- <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -1152,10 +1152,10 @@
         <label>Blade2</label>
         <topic>/model/omnicopter/link/motor_5_link/forces/lift_drag</topic>
       </visualize_forces>
-    </plugin>
+    </plugin> -->
 
     <!-- prop motor_6 (ccw) lift-drag -->
-    <plugin filename="gz-sim-lift-drag-system"
+    <!-- <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -1200,6 +1200,213 @@
         <label>Blade2</label>
         <topic>/model/omnicopter/link/motor_6_link/forces/lift_drag</topic>
       </visualize_forces>
+    </plugin> -->
+
+    <!-- <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>motor_1_joint</joint_name>
+      <topic>/model/omnicopter/joint/motor_1_joint/cmd_vel</topic>
+      <use_force_commands>0</use_force_commands>
+      <initial_velocity>0.0</initial_velocity>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2</cmd_max>
+      <cmd_min>-2</cmd_min>
+      <cmd_offset>0</cmd_offset>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>motor_2_joint</joint_name>
+      <use_force_commands>0</use_force_commands>
+      <initial_velocity>0.0</initial_velocity>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2</cmd_max>
+      <cmd_min>-2</cmd_min>
+      <cmd_offset>0</cmd_offset>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>motor_3_joint</joint_name>
+      <use_force_commands>0</use_force_commands>
+      <initial_velocity>0.0</initial_velocity>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2</cmd_max>
+      <cmd_min>-2</cmd_min>
+      <cmd_offset>0</cmd_offset>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>motor_4_joint</joint_name>
+      <use_force_commands>0</use_force_commands>
+      <initial_velocity>0.0</initial_velocity>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2</cmd_max>
+      <cmd_min>-2</cmd_min>
+      <cmd_offset>0</cmd_offset>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>motor_5_joint</joint_name>
+      <use_force_commands>0</use_force_commands>
+      <initial_velocity>0.0</initial_velocity>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2</cmd_max>
+      <cmd_min>-2</cmd_min>
+      <cmd_offset>0</cmd_offset>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>motor_6_joint</joint_name>
+      <use_force_commands>0</use_force_commands>
+      <initial_velocity>0.0</initial_velocity>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2</cmd_max>
+      <cmd_min>-2</cmd_min>
+      <cmd_offset>0</cmd_offset>
+    </plugin> -->
+
+    <plugin
+      filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <robotNamespace></robotNamespace>
+      <jointName>motor_1_joint</jointName>
+      <linkName>motor_1_link</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1381</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>/model/omnicopter/motors/cmd_vel</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/model/omnicopter/motors/speed/1</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin
+      filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <robotNamespace></robotNamespace>
+      <jointName>motor_2_joint</jointName>
+      <linkName>motor_2_link</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1381</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>/model/omnicopter/motors/cmd_vel</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/model/omnicopter/motors/speed/2</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin
+      filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <robotNamespace></robotNamespace>
+      <jointName>motor_3_joint</jointName>
+      <linkName>motor_3_link</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1381</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>/model/omnicopter/motors/cmd_vel</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/model/omnicopter/motors/speed/3</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin
+      filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <robotNamespace></robotNamespace>
+      <jointName>motor_4_joint</jointName>
+      <linkName>motor_4_link</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1381</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>/model/omnicopter/motors/cmd_vel</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/model/omnicopter/motors/speed/4</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin
+      filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <robotNamespace></robotNamespace>
+      <jointName>motor_5_joint</jointName>
+      <linkName>motor_5_link</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1381</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>/model/omnicopter/motors/cmd_vel</commandSubTopic>
+      <motorNumber>4</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/model/omnicopter/motors/speed/5</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin
+      filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <robotNamespace></robotNamespace>
+      <jointName>motor_6_joint</jointName>
+      <linkName>motor_6_link</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1381</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>/model/omnicopter/motors/cmd_vel</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/model/omnicopter/motors/speed/6</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
     </plugin>
 
     <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
@@ -1225,6 +1432,9 @@
       <!-- Sensors -->
       <imuName>imu_link::imu_sensor</imuName>
 
+      <!-- Publishing -->
+      <publish_rate>50</publish_rate>
+
       <!-- 
           SERVO1_FUNCTION   33 (Motor 1 CW)
           SERVO1_MAX        2000
@@ -1235,18 +1445,21 @@
       <control channel="0">
         <jointName>motor_1_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-2762</multiplier>
+        <!-- <multiplier>-2762</multiplier> -->
+        <multiplier>2762</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>VELOCITY</type>
-        <p_gain>0.25</p_gain> 
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>-1</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
+        <type>COMMAND</type>
+        <cmd_topic>/model/omnicopter/joint/motor_1_joint/cmd_vel</cmd_topic>
+        <!-- <type>VELOCITY</type>
+        <p_gain>0.1</p_gain>
+        <i_gain>0.07</i_gain>
+        <d_gain>0.0</d_gain>
+        <i_max>20</i_max>
+        <i_min>-20</i_min>
+        <cmd_max>50</cmd_max>
+        <cmd_min>-50</cmd_min> -->
       </control>
 
       <!-- 
@@ -1259,18 +1472,21 @@
       <control channel="1">
         <jointName>motor_2_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-2762</multiplier>
+        <!-- <multiplier>-2762</multiplier> -->
+        <multiplier>2762</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>VELOCITY</type>
-        <p_gain>0.25</p_gain> 
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>-1</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
+        <type>COMMAND</type>
+        <cmd_topic>/model/omnicopter/joint/motor_2_joint/cmd_vel</cmd_topic>
+        <!-- <type>VELOCITY</type>
+        <p_gain>0.1</p_gain>
+        <i_gain>0.07</i_gain>
+        <d_gain>0.0</d_gain>
+        <i_max>20</i_max>
+        <i_min>-20</i_min>
+        <cmd_max>50</cmd_max>
+        <cmd_min>-50</cmd_min> -->
       </control>
 
       <!-- 
@@ -1287,14 +1503,16 @@
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>VELOCITY</type>
-        <p_gain>0.25</p_gain> 
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>-1</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
+        <type>COMMAND</type>
+        <cmd_topic>/model/omnicopter/joint/motor_3_joint/cmd_vel</cmd_topic>
+        <!-- <type>VELOCITY</type>
+        <p_gain>0.1</p_gain>
+        <i_gain>0.07</i_gain>
+        <d_gain>0.0</d_gain>
+        <i_max>20</i_max>
+        <i_min>-20</i_min>
+        <cmd_max>50</cmd_max>
+        <cmd_min>-50</cmd_min> -->
       </control>
 
       <!-- 
@@ -1311,14 +1529,16 @@
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>VELOCITY</type>
-        <p_gain>0.25</p_gain> 
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>-1</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
+        <type>COMMAND</type>
+        <cmd_topic>/model/omnicopter/joint/motor_4_joint/cmd_vel</cmd_topic>
+        <!-- <type>VELOCITY</type>
+        <p_gain>0.1</p_gain>
+        <i_gain>0.07</i_gain>
+        <d_gain>0.0</d_gain>
+        <i_max>20</i_max>
+        <i_min>-20</i_min>
+        <cmd_max>50</cmd_max>
+        <cmd_min>-50</cmd_min> -->
       </control>
 
       <!-- 
@@ -1331,18 +1551,21 @@
       <control channel="4">
         <jointName>motor_5_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-2762</multiplier>
+        <!-- <multiplier>-2762</multiplier> -->
+        <multiplier>2762</multiplier>
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>VELOCITY</type>
-        <p_gain>0.25</p_gain> 
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>-1</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
+        <type>COMMAND</type>
+        <cmd_topic>/model/omnicopter/joint/motor_5_joint/cmd_vel</cmd_topic>
+        <!-- <type>VELOCITY</type>
+        <p_gain>0.1</p_gain>
+        <i_gain>0.07</i_gain>
+        <d_gain>0.0</d_gain>
+        <i_max>20</i_max>
+        <i_min>-20</i_min>
+        <cmd_max>50</cmd_max>
+        <cmd_min>-50</cmd_min> -->
       </control>
 
       <!-- 
@@ -1359,14 +1582,16 @@
         <offset>-0.5</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>VELOCITY</type>
-        <p_gain>0.25</p_gain> 
-        <i_gain>0</i_gain>
-        <d_gain>0</d_gain>
-        <i_max>-1</i_max>
-        <i_min>0</i_min>
-        <cmd_max>2.5</cmd_max>
-        <cmd_min>-2.5</cmd_min>
+        <type>COMMAND</type>
+        <cmd_topic>/model/omnicopter/joint/motor_6_joint/cmd_vel</cmd_topic>
+        <!-- <type>VELOCITY</type>
+        <p_gain>0.1</p_gain>
+        <i_gain>0.07</i_gain>
+        <d_gain>0.0</d_gain>
+        <i_max>20</i_max>
+        <i_min>-20</i_min>
+        <cmd_max>50</cmd_max>
+        <cmd_min>-50</cmd_min> -->
       </control>
 
     </plugin>

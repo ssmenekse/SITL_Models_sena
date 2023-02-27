@@ -31,3 +31,12 @@ gz sim -v4 -r omnicopter_runway.sdf
 ```bash
 sim_vehicle.py -v ArduCopter -f JSON --add-param-file=$HOME/SITL_Models/Gazebo/config/omnicopter.param --console --map
 ```
+
+#### Tuning
+
+Adjust the follow camera so that the model is easier to view:
+
+```bash
+gz service -s /gui/follow/offset --reqtype gz.msgs.Vector3d --reptype gz.msgs.Boolean --timeout 2000 --req "x: 1, y: 1, z: 0" 
+data: true
+```
