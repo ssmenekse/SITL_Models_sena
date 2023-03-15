@@ -1825,9 +1825,9 @@
       <velocity_decay/>
     </link>
 
-    <!-- motors -->
-    <link name="motor_fl_link">
-      <pose relative_to="motor_fl_joint">0 0 0 0 0 0</pose>
+    <!-- motor 3 cw front left -->
+    <link name="motor3_fl_link">
+      <pose relative_to="motor3_fl_joint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -1851,19 +1851,19 @@
         <geometry>
           <mesh>
             <scale>0.7 0.7 0.7</scale>
-            <uri>model://hexapod_copter/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://hexapod_copter/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
-          <ambient>0 0 1</ambient>
-          <diffuse>0 0 1</diffuse>
+          <ambient>0 1 0</ambient>
+          <diffuse>0 1 0</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
     </link>
-    <joint name="motor_fl_joint" type="revolute">
+    <joint name="motor3_fl_joint" type="revolute">
       <pose relative_to="tibia_fl_link">0.03 0 -0.03 0 1.570796 0</pose>
-      <child>motor_fl_link</child>
+      <child>motor3_fl_link</child>
       <parent>tibia_fl_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
@@ -1877,8 +1877,9 @@
       </axis>
     </joint>
 
-    <link name="motor_fr_link">
-      <pose relative_to="motor_fr_joint">0 0 0 0 0 0</pose>
+    <!-- motor 5 ccw front right -->
+    <link name="motor5_fr_link">
+      <pose relative_to="motor5_fr_joint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -1912,9 +1913,9 @@
         </material>
       </visual>
     </link>
-    <joint name="motor_fr_joint" type="revolute">
+    <joint name="motor5_fr_joint" type="revolute">
       <pose relative_to="tibia_fr_link">0.03 0 -0.03 0 1.570796 0</pose>
-      <child>motor_fr_link</child>
+      <child>motor5_fr_link</child>
       <parent>tibia_fr_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
@@ -1928,8 +1929,9 @@
       </axis>
     </joint>
 
-    <link name="motor_bl_link">
-      <pose relative_to="motor_bl_joint">0 0 0 0 0 0</pose>
+    <!-- motor 6 cw back left -->
+    <link name="motor6_bl_link">
+      <pose relative_to="motor6_bl_joint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -1953,19 +1955,19 @@
         <geometry>
           <mesh>
             <scale>0.7 0.7 0.7</scale>
-            <uri>model://hexapod_copter/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://hexapod_copter/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
-          <ambient>0 0 1</ambient>
-          <diffuse>0 0 1</diffuse>
+          <ambient>0 1 0</ambient>
+          <diffuse>0 1 0</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
     </link>
-    <joint name="motor_bl_joint" type="revolute">
+    <joint name="motor6_bl_joint" type="revolute">
       <pose relative_to="tibia_bl_link">0.03 0 -0.03 0 1.570796 0</pose>
-      <child>motor_bl_link</child>
+      <child>motor6_bl_link</child>
       <parent>tibia_bl_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
@@ -1979,8 +1981,9 @@
       </axis>
     </joint>
 
-    <link name="motor_br_link">
-      <pose relative_to="motor_br_joint">0 0 0 0 0 0</pose>
+    <!-- motor 4 ccw back right -->
+    <link name="motor4_br_link">
+      <pose relative_to="motor4_br_joint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -2014,9 +2017,9 @@
         </material>
       </visual>
     </link>
-    <joint name="motor_br_joint" type="revolute">
+    <joint name="motor4_br_joint" type="revolute">
       <pose relative_to="tibia_br_link">0.03 0 -0.03 0 1.570796 0</pose>
-      <child>motor_br_link</child>
+      <child>motor4_br_link</child>
       <parent>tibia_br_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
@@ -2030,8 +2033,9 @@
       </axis>
     </joint>
 
-    <link name="motor_ml_link">
-      <pose relative_to="motor_ml_joint">0 0 0 0 0 0</pose>
+    <!-- motor 2 ccw mid left -->
+    <link name="motor2_ml_link">
+      <pose relative_to="motor2_ml_joint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -2065,9 +2069,9 @@
         </material>
       </visual>
     </link>
-    <joint name="motor_ml_joint" type="revolute">
+    <joint name="motor2_ml_joint" type="revolute">
       <pose relative_to="tibia_ml_link">0.03 0 -0.03 0 1.570796 0</pose>
-      <child>motor_ml_link</child>
+      <child>motor2_ml_link</child>
       <parent>tibia_ml_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
@@ -2081,8 +2085,9 @@
       </axis>
     </joint>
 
-    <link name="motor_mr_link">
-      <pose relative_to="motor_mr_joint">0 0 0 0 0 0</pose>
+    <!-- motor 1 cw mid right -->
+    <link name="motor1_mr_link">
+      <pose relative_to="motor1_mr_joint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.025</mass>
         <inertia>
@@ -2106,19 +2111,19 @@
         <geometry>
           <mesh>
             <scale>0.7 0.7 0.7</scale>
-            <uri>model://hexapod_copter/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://hexapod_copter/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
-          <ambient>0 0 1</ambient>
-          <diffuse>0 0 1</diffuse>
+          <ambient>0 1 0</ambient>
+          <diffuse>0 1 0</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
     </link>
-    <joint name="motor_mr_joint" type="revolute">
+    <joint name="motor1_mr_joint" type="revolute">
       <pose relative_to="tibia_mr_link">0.03 0 -0.03 0 1.570796 0</pose>
-      <child>motor_mr_link</child>
+      <child>motor1_mr_link</child>
       <parent>tibia_mr_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
@@ -2131,9 +2136,6 @@
         </dynamics>
       </axis>
     </joint>
-
-
-
 
     <!-- sensors -->
     <link name="imu_link">
@@ -2412,6 +2414,224 @@
       <cmd_min>-5</cmd_min>
     </plugin>
 
+    <!-- lift-drag setting for props taken from iris -->
+
+    <!-- motor 1 cw - mid right -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor1_mr_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor1_mr_link</link_name>
+    </plugin>
+
+    <!-- motor 3 cw - front left -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor3_fl_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor3_fl_link</link_name>
+    </plugin>
+
+    <!-- motor 6 cw - back left -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor6_bl_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor6_bl_link</link_name>
+    </plugin>
+
+    <!-- motor 2 ccw - mid left -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor2_ml_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor2_ml_link</link_name>
+    </plugin>
+
+    <!-- motor 5 ccw - front right -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor5_fr_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor5_fr_link</link_name>
+    </plugin>
+
+    <!-- motor 4 ccw - back right -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor4_br_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor4_br_link</link_name>
+    </plugin>
+
     <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
       <!-- Communication -->
       <fdm_addr>127.0.0.1</fdm_addr>
@@ -2426,6 +2646,121 @@
       <!-- Sensors -->
       <imuName>imu_link::imu_sensor</imuName>
 
+      <!-- Hexacopter velocity control -->
+      <!-- 
+        ccw:  positive multiplier
+        cw:   negative multiplier
+      -->
+      <!-- motor 1 cw -->
+      <control channel="0">
+        <jointName>motor1_mr_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-838</multiplier>
+        <offset>0</offset>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+      </control>
+
+      <!-- motor 2 ccw -->
+      <control channel="1">
+        <jointName>motor2_ml_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>838</multiplier>
+        <offset>0</offset>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+      </control>
+
+      <!-- motor 3 cw -->
+      <control channel="2">
+        <jointName>motor3_fl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-838</multiplier>
+        <offset>0</offset>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+      </control>
+
+      <!-- motor 4 ccw -->
+      <control channel="3">
+        <jointName>motor4_br_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>838</multiplier>
+        <offset>0</offset>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+      </control>
+
+      <!-- motor 5 ccw -->
+      <control channel="4">
+        <jointName>motor5_fr_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>838</multiplier>
+        <offset>0</offset>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+      </control>
+
+      <!-- motor 6 cw -->
+      <control channel="5">
+        <jointName>motor6_bl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-838</multiplier>
+        <offset>0</offset>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+      </control>
+
+      <!-- Disable joint control -->
+
       <!-- 
           SERVO1_FUNCTION 94 (Script 1)
           SERVO1_MAX        2500
@@ -2433,170 +2768,170 @@
           SERVO1_REVERSED      ?
           SERVO1_TRIM          ? 
       -->
-      <control channel="0">
-          <jointName>coxa_fr_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>coxa_fr_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="0">
+        <jointName>coxa_fr_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>coxa_fr_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO2_FUNCTION 95 (Script 2)
       -->
-      <control channel="1">
-          <jointName>femur_fr_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>-3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>femur_fr_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="1">
+        <jointName>femur_fr_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>femur_fr_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO3_FUNCTION 96 (Script 3)
       -->
-      <control channel="2">
-          <jointName>tibia_fr_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>tibia_fr_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="2">
+        <jointName>tibia_fr_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>tibia_fr_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO4_FUNCTION 97 (Script 4)
       -->
-      <control channel="3">
-          <jointName>coxa_fl_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>coxa_fl_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="3">
+        <jointName>coxa_fl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>coxa_fl_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO5_FUNCTION 98 (Script 5)
       -->
-      <control channel="4">
-          <jointName>femur_fl_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>femur_fl_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="4">
+        <jointName>femur_fl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>femur_fl_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO6_FUNCTION 99 (Script 6)
       -->
-      <control channel="5">
-          <jointName>tibia_fl_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>-3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>tibia_fl_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="5">
+        <jointName>tibia_fl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>tibia_fl_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO7_FUNCTION 100 (Script 7)
       -->
-      <control channel="6">
-          <jointName>coxa_bl_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>coxa_bl_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="6">
+        <jointName>coxa_bl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>coxa_bl_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO8_FUNCTION 101 (Script 8)
       -->
-      <control channel="7">
-          <jointName>femur_bl_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>-3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>femur_bl_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="7">
+        <jointName>femur_bl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>femur_bl_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO9_FUNCTION 102 (Script 9)
       -->
-      <control channel="8">
-          <jointName>tibia_bl_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>tibia_bl_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="8">
+        <jointName>tibia_bl_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>tibia_bl_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO10_FUNCTION 103 (Script 10)
       -->
-      <control channel="9">
-          <jointName>coxa_br_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>coxa_br_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="9">
+        <jointName>coxa_br_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>coxa_br_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO11_FUNCTION 104 (Script 11)
       -->
-      <control channel="10">
-          <jointName>femur_br_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>femur_br_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="10">
+        <jointName>femur_br_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>femur_br_joint/cmd_pos</cmd_topic>
+      </control> -->
 
       <!--
           SERVO12_FUNCTION 105 (Script 12)
       -->
-      <control channel="11">
-          <jointName>tibia_br_joint</jointName>
-          <useForce>1</useForce>
-          <multiplier>-3.1415926</multiplier>
-          <offset>-0.5</offset>
-          <servo_min>500</servo_min>
-          <servo_max>2500</servo_max>
-          <type>COMMAND</type>
-          <cmd_topic>tibia_br_joint/cmd_pos</cmd_topic>
-      </control>
+      <!-- <control channel="11">
+        <jointName>tibia_br_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-3.1415926</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>500</servo_min>
+        <servo_max>2500</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>tibia_br_joint/cmd_pos</cmd_topic>
+      </control> -->
     </plugin>
 
   </model>
