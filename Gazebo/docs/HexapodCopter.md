@@ -25,7 +25,7 @@ $ gz sim -v4 -r hexapod_copter_runway.sdf
 The initial version of this model is configured as a hexacopter.
 
 ```bash
-$ sim_vehicle.py -v ArduCopter -f JSON --add-param-file=$HOME/SITL_Models/Gazebo/config/hexapod_copter.param --console --map
+sim_vehicle.py -D -v ArduCopter -f hexa --model JSON --console
 ```
 
 ## Dimensions
