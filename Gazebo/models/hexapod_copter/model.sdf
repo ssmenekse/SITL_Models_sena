@@ -1236,6 +1236,595 @@
       <velocity_decay/>
     </link>
 
+    <!-- add two more legs -->
+    <joint name="coxa_ml_joint" type="revolute">
+      <pose relative_to="base_link">0 0.07 0 0 0 1.570796</pose>
+      <parent>base_link</parent>
+      <child>coxa_ml_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name="coxa_ml_link">
+      <pose relative_to="coxa_ml_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01425 0 0 0 1.5708 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>9.26875e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.26875e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="coxa_ml_link_collision">
+        <pose>0.01425 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0285</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="coxa_ml_link_visual">
+        <pose>0 0 0.0196 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadruped/meshes/hexapod_coxa_l.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_metallic.jpg</metalness_map>
+              <normal_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_normal.jpg</normal_map>
+              <roughness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name="femur_ml_joint" type="revolute">
+      <pose relative_to="coxa_ml_link">0.0285 0 0 0 -0 0</pose>
+      <parent>coxa_ml_link</parent>
+      <child>femur_ml_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name="femur_ml_link">
+      <pose relative_to="femur_ml_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.0381 0 0 0 1.5708 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>5.0887e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.0887e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="femur_ml_link_collision">
+        <pose>0.0381 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0762</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="femur_ml_link_visual">
+        <pose>0 -0.026 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadruped/meshes/hexapod_femur_l.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_metallic.jpg</metalness_map>
+              <normal_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_normal.jpg</normal_map>
+              <roughness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name="tibia_ml_joint" type="revolute">
+      <pose relative_to="femur_ml_link">0.0762 0 0 0 -0 0</pose>
+      <parent>femur_ml_link</parent>
+      <child>tibia_ml_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name="tibia_ml_link">
+      <pose relative_to="tibia_ml_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.051 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>8.92e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.92e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="tibia_ml_link_collision">
+        <pose>0 0 -0.051 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.102</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <collision name="tibia_ml_link_fixed_joint_lump__foot_ml_link_collision_1">
+        <pose>0 0 -0.102 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <surface_radius>0.01</surface_radius>
+              <use_patch_radius>0</use_patch_radius>
+            </torsional>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1e+15</kp>
+              <kd>1e+13</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="tibia_ml_link_visual">
+        <pose>0 -0.0185 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadruped/meshes/hexapod_tibia_l.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_metallic.jpg</metalness_map>
+              <normal_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_normal.jpg</normal_map>
+              <roughness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+
+    <joint name="coxa_mr_joint" type="revolute">
+      <pose relative_to="base_link">0 -0.07 0 0 0 -1.570796</pose>
+      <parent>base_link</parent>
+      <child>coxa_mr_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name="coxa_mr_link">
+      <pose relative_to="coxa_mr_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01425 0 0 0 1.5708 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>9.26875e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.26875e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="coxa_mr_link_collision">
+        <pose>0.01425 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0285</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="coxa_mr_link_visual">
+        <pose>0 0 0.0196 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadruped/meshes/hexapod_coxa_r.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_metallic.jpg</metalness_map>
+              <normal_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_normal.jpg</normal_map>
+              <roughness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name="femur_mr_joint" type="revolute">
+      <pose relative_to="coxa_mr_link">0.0285 0 0 0 -0 0</pose>
+      <parent>coxa_mr_link</parent>
+      <child>femur_mr_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name="femur_mr_link">
+      <pose relative_to="femur_mr_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.0381 0 0 0 1.5708 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>5.0887e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.0887e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="femur_mr_link_collision">
+        <pose>0.0381 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0762</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="femur_mr_link_visual">
+        <pose>0 0.026 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadruped/meshes/hexapod_femur_r.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_metallic.jpg</metalness_map>
+              <normal_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_normal.jpg</normal_map>
+              <roughness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name="tibia_mr_joint" type="revolute">
+      <pose relative_to="femur_mr_link">0.0762 0 0 0 -0 0</pose>
+      <parent>femur_mr_link</parent>
+      <child>tibia_mr_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name="tibia_mr_link">
+      <pose relative_to="tibia_mr_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.051 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>8.92e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.92e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="tibia_mr_link_collision">
+        <pose>0 0 -0.051 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.102</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <collision name="tibia_mr_link_fixed_joint_lump__foot_mr_link_collision_1">
+        <pose>0 0 -0.102 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+              <mu1>1.0</mu1>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <surface_radius>0.01</surface_radius>
+              <use_patch_radius>0</use_patch_radius>
+            </torsional>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1e+15</kp>
+              <kd>1e+13</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="tibia_mr_link_visual">
+        <pose>0 0.0185 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadruped/meshes/hexapod_tibia_r.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_diffuse.jpg</albedo_map>
+              <metalness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_metallic.jpg</metalness_map>
+              <normal_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_normal.jpg</normal_map>
+              <roughness_map>model://quadruped/materials/textures/silver_blue_metal/silver_blue_metal_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+
     <!-- sensors -->
     <link name="imu_link">
       <inertial>
