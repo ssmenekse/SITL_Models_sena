@@ -2182,9 +2182,9 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>coxa_bl_joint</joint_name>
       <topic>/coxa_bl_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2194,9 +2194,10 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_bl_joint</joint_name>
       <topic>/femur_bl_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <initial_position>-0.6</initial_position>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2207,9 +2208,9 @@
       <joint_name>tibia_bl_joint</joint_name>
       <topic>/tibia_bl_joint/cmd_pos</topic>
       <initial_position>-1</initial_position>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2220,9 +2221,9 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>coxa_br_joint</joint_name>
       <topic>/coxa_br_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2232,9 +2233,10 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_br_joint</joint_name>
       <topic>/femur_br_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <initial_position>-0.6</initial_position>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2245,9 +2247,9 @@
       <joint_name>tibia_br_joint</joint_name>
       <topic>/tibia_br_joint/cmd_pos</topic>
       <initial_position>-1</initial_position>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2258,9 +2260,9 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>coxa_fl_joint</joint_name>
       <topic>/coxa_fl_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2270,9 +2272,10 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_fl_joint</joint_name>
       <topic>/femur_fl_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <initial_position>-0.6</initial_position>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2283,9 +2286,9 @@
       <joint_name>tibia_fl_joint</joint_name>
       <topic>/tibia_fl_joint/cmd_pos</topic>
       <initial_position>-1</initial_position>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2296,9 +2299,9 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>coxa_fr_joint</joint_name>
       <topic>/coxa_fr_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2308,9 +2311,10 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_fr_joint</joint_name>
       <topic>/femur_fr_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <initial_position>-0.6</initial_position>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2321,9 +2325,9 @@
       <joint_name>tibia_fr_joint</joint_name>
       <topic>/tibia_fr_joint/cmd_pos</topic>
       <initial_position>-1</initial_position>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2334,9 +2338,9 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>coxa_ml_joint</joint_name>
       <topic>/coxa_ml_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2346,9 +2350,10 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_ml_joint</joint_name>
       <topic>/femur_ml_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <initial_position>-0.6</initial_position>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2359,9 +2364,9 @@
       <joint_name>tibia_ml_joint</joint_name>
       <topic>/tibia_ml_joint/cmd_pos</topic>
       <initial_position>-1</initial_position>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2372,9 +2377,9 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>coxa_mr_joint</joint_name>
       <topic>/coxa_mr_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2384,9 +2389,10 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_mr_joint</joint_name>
       <topic>/femur_mr_joint/cmd_pos</topic>
-      <p_gain>100</p_gain>
+      <initial_position>-0.6</initial_position>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
@@ -2397,9 +2403,9 @@
       <joint_name>tibia_mr_joint</joint_name>
       <topic>/tibia_mr_joint/cmd_pos</topic>
       <initial_position>-1</initial_position>
-      <p_gain>100</p_gain>
+      <p_gain>10</p_gain>
       <i_gain>0</i_gain>
-      <d_gain>0</d_gain>
+      <d_gain>0.1</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
       <cmd_max>5</cmd_max>
