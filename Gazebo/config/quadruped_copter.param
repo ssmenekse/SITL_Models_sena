@@ -1,4 +1,4 @@
-FRAME_CLASS      16.0        # 6DoF Scripting
+FRAME_CLASS      15.0        # Scripting Matrix
 FRAME_TYPE       1           # X
 
 SCR_DEBUG_OPTS   0
@@ -47,22 +47,22 @@ SERVO16_MAX      2000.0
 SERVO16_MIN      1000.0
 SERVO16_REVERSED 0           # Normal
 SERVO16_TRIM     1500.0
-SERVO1_FUNCTION  94.0        # Script 1
+SERVO1_FUNCTION  33.0        # Motor 1
 SERVO1_MAX       2000.0
 SERVO1_MIN       1000.0
 SERVO1_REVERSED  0           # Normal
 SERVO1_TRIM      1500.0
-SERVO2_FUNCTION  95.0        # Script 2
+SERVO2_FUNCTION  34.0        # Motor 2
 SERVO2_MAX       2000.0
 SERVO2_MIN       1000.0
 SERVO2_REVERSED  0           # Normal
 SERVO2_TRIM      1500.0
-SERVO3_FUNCTION  96.0        # Script 3
+SERVO3_FUNCTION  35.0        # Motor 3
 SERVO3_MAX       2000.0
 SERVO3_MIN       1000.0
 SERVO3_REVERSED  0           # Normal
 SERVO3_TRIM      1500.0
-SERVO4_FUNCTION  97.0        # Script 4
+SERVO4_FUNCTION  36.0        # Motor 4
 SERVO4_MAX       2000.0
 SERVO4_MIN       1000.0
 SERVO4_REVERSED  0           # Normal

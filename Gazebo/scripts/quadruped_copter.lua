@@ -3,22 +3,22 @@
 -- Adapted from https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/quadruped.lua
 
 -- AutoPilot servo connections:
--- Output1: motor 1 front left ccw
--- Output2: motor 2 back left ccw
--- Output3: motor 3 front left cw
--- Output4: motor 4 back right cw
--- Output5: front right coxa (hip) servo
--- Output6: front right femur (thigh) servo
--- Output7: front right tibia (shin) servo
--- Output8: front left coxa (hip) servo
--- Output9: front left femur (thigh) servo
--- Output10: front left tibia (shin) servo
--- Output11: back left coxa (hip) servo
--- Output12: back left femur (thigh) servo
--- Output13: back left tibia (shin) servo
--- Output14: back right coxa (hip) servo
--- Output15: back right femur (thigh) servo
--- Output16: back right tibia (shin) servo
+-- SERVO1: Motor1: front left ccw
+-- SERVO2: Motor2: back left ccw
+-- SERVO3: Motor3: front left cw
+-- SERVO4: Motor4: back right cw
+-- SERVO5: Script5: front right coxa (hip) servo
+-- SERVO6: Script6: front right femur (thigh) servo
+-- SERVO7: Script7: front right tibia (shin) servo
+-- SERVO8: Script8: front left coxa (hip) servo
+-- SERVO9: Script9: front left femur (thigh) servo
+-- SERVO10: Script10: front left tibia (shin) servo
+-- SERVO11: Script11: back left coxa (hip) servo
+-- SERVO12: Script12: back left femur (thigh) servo
+-- SERVO13: Script13: back left tibia (shin) servo
+-- SERVO14: Script14: back right coxa (hip) servo
+-- SERVO15: Script15: back right femur (thigh) servo
+-- SERVO16: Script16: back right tibia (shin) servo
 --
 -- CAUTION: This script should only be used with ArduPilot firmware
 
@@ -54,23 +54,19 @@ local armed_leg_angles = {
   0, -30, -60   -- back right leg (coxa, femur, tibia)
 }
 
-local disarmed_motor_speeds = {
-  1000, 1000, 1000, 1000
-}
+-- Adapted rom https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua
 
-local armed_motor_speeds = {
-  1100, 1100, 1100, 1100
-}
+-- duplicate the standard + Quad mix
+MotorsMatrix:add_motor_raw(0,-1, 0, 1, 2)
+MotorsMatrix:add_motor_raw(1, 1, 0, 1, 4)
+MotorsMatrix:add_motor_raw(2, 0, 1,-1, 1)
+MotorsMatrix:add_motor_raw(3, 0,-1,-1, 3)
+
+assert(MotorsMatrix:init(4), "Failed to init MotorsMatrix")
+
+motors:set_frame_string("Set Quadruped Copter MotorMatrix")
 
 function update()
-
-  local motor_speeds
-  if arming:is_armed() then
-    motor_speeds = armed_motor_speeds
-  else
-    motor_speeds = disarmed_motor_speeds
-    motor_speeds = armed_motor_speeds
-  end
 
   local leg_servo_direction = {
     1, -1,  1,  -- front right leg (coxa, femur, tibia)
@@ -84,27 +80,23 @@ function update()
     leg_angles = armed_leg_angles
   else
     leg_angles = disarmed_leg_angles
-    leg_angles = armed_leg_angles
+    -- leg_angles = armed_leg_angles
   end
 
-  -- motors 1 - 4
-  for i = 1, 4 do
-    SRV_Channels:set_output_pwm_chan_timeout(
-      i - 1,
-      motor_speeds[i],
-      1000)
-  end
-
-  -- legs 1 - 4
+  -- legs 1 - 12 (first leg output is 4 as 0 - 3 are assigned to motors)
   for i = 1, 12 do
-    SRV_Channels:set_output_pwm_chan_timeout(
-      i + 3,
-      math.floor(((leg_angles[i] * leg_servo_direction[i] * 1000) / 90) + 1500),
-      1000)
+    -- norm_angle in [-1, 1]
+    local norm_angle = leg_angles[i] * leg_servo_direction[i] / 90
+    -- pwm in [1000, 2000]
+    local pwm = math.floor(norm_angle * 500 + 1500)
+
+    SRV_Channels:set_output_pwm_chan_timeout(i + 3, pwm, 1000)
   end
+
+  return update,10
 end
 
 -- turn off rudder based arming/disarming
 param:set_and_save('ARMING_RUDDER', 0)
-gcs:send_text(0, "quadruped simulation")
+gcs:send_text(0, "Quadruped Copter")
 return update()

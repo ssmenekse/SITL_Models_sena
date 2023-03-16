@@ -1809,7 +1809,7 @@
         cw:   negative multiplier
       -->
       <!-- 
-          SERVO1_FUNCTION 94 (Script 1) - was 33 (Motor1)
+          SERVO1_FUNCTION 33 (Motor1)
           SERVO1_MAX        2000
           SERVO1_MIN        1000
           SERVO1_REVERSED      0
@@ -1821,8 +1821,8 @@
         <useForce>1</useForce>
         <multiplier>838</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1834,7 +1834,7 @@
       </control>
 
       <!-- 
-          SERVO2_FUNCTION 95 (Script 2) - was 34 (Motor2)
+          SERVO2_FUNCTION 34 (Motor2)
           SERVO2_MAX        2000
           SERVO2_MIN        1000
           SERVO2_REVERSED      0
@@ -1846,8 +1846,8 @@
         <useForce>1</useForce>
         <multiplier>838</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1859,7 +1859,7 @@
       </control>
 
       <!-- 
-          SERVO3_FUNCTION 96 (Script 3) - was 35 (Motor3)
+          SERVO3_FUNCTION 35 (Motor3)
           SERVO3_MAX        2000
           SERVO3_MIN        1000
           SERVO3_REVERSED      0
@@ -1871,8 +1871,8 @@
         <useForce>1</useForce>
         <multiplier>-838</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1884,7 +1884,7 @@
       </control>
 
       <!-- 
-          SERVO4_FUNCTION 97 (Script 4) - was 36 (Motor4)
+          SERVO4_FUNCTION 36 (Motor4)
           SERVO4_MAX        2000
           SERVO4_MIN        1000
           SERVO4_REVERSED      0
@@ -1896,8 +1896,8 @@
         <useForce>1</useForce>
         <multiplier>-838</multiplier>
         <offset>0</offset>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>VELOCITY</type>
         <p_gain>0.20</p_gain>
         <i_gain>0</i_gain>
@@ -1908,7 +1908,7 @@
         <cmd_min>-5.0</cmd_min>
       </control>
 
-      <!-- Disable joint control -->
+      <!-- Leg oint control -->
 
       <!-- 
           SERVO5_FUNCTION 98 (Script 5)
@@ -1922,8 +1922,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>coxa_fr_joint/cmd_pos</cmd_topic>
       </control>
@@ -1936,8 +1936,8 @@
         <useForce>1</useForce>
         <multiplier>-3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>femur_fr_joint/cmd_pos</cmd_topic>
       </control>
@@ -1950,8 +1950,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>tibia_fr_joint/cmd_pos</cmd_topic>
       </control>
@@ -1964,8 +1964,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>coxa_fl_joint/cmd_pos</cmd_topic>
       </control>
@@ -1978,8 +1978,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>femur_fl_joint/cmd_pos</cmd_topic>
       </control>
@@ -1992,8 +1992,8 @@
         <useForce>1</useForce>
         <multiplier>-3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>tibia_fl_joint/cmd_pos</cmd_topic>
       </control>
@@ -2006,8 +2006,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>coxa_bl_joint/cmd_pos</cmd_topic>
       </control>
@@ -2020,8 +2020,8 @@
         <useForce>1</useForce>
         <multiplier>-3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>femur_bl_joint/cmd_pos</cmd_topic>
       </control>
@@ -2034,8 +2034,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>tibia_bl_joint/cmd_pos</cmd_topic>
       </control>
@@ -2048,8 +2048,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>coxa_br_joint/cmd_pos</cmd_topic>
       </control>
@@ -2062,8 +2062,8 @@
         <useForce>1</useForce>
         <multiplier>3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>femur_br_joint/cmd_pos</cmd_topic>
       </control>
@@ -2076,8 +2076,8 @@
         <useForce>1</useForce>
         <multiplier>-3.1415926</multiplier>
         <offset>-0.5</offset>
-        <servo_min>500</servo_min>
-        <servo_max>2500</servo_max>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
         <type>COMMAND</type>
         <cmd_topic>tibia_br_joint/cmd_pos</cmd_topic>
       </control>
