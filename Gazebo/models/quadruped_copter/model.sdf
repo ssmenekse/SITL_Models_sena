@@ -1803,7 +1803,7 @@
       <!-- Sensors -->
       <imuName>imu_link::imu_sensor</imuName>
 
-      <!-- Hexacopter velocity control -->
+      <!-- Velocity control -->
       <!-- 
         ccw:  positive multiplier
         cw:   negative multiplier
