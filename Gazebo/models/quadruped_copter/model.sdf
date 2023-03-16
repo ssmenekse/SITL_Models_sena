@@ -1908,7 +1908,7 @@
         <cmd_min>-5.0</cmd_min>
       </control>
 
-      <!-- Leg oint control -->
+      <!-- Leg control -->
 
       <!-- 
           SERVO5_FUNCTION 98 (Script 5)

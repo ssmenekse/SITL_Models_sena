@@ -80,7 +80,6 @@ function update()
     leg_angles = armed_leg_angles
   else
     leg_angles = disarmed_leg_angles
-    -- leg_angles = armed_leg_angles
   end
 
   -- legs 1 - 12 (first leg output is 4 as 0 - 3 are assigned to motors)
