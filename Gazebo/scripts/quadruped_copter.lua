@@ -48,10 +48,10 @@ local disarmed_leg_angles = {
 }
 
 local armed_leg_angles = {
-  0, -30, -60,  -- front right leg (coxa, femur, tibia)
-  0, -30, -60, -- front left leg (coxa, femur, tibia)
-  0, -30, -60, -- back left leg (coxa, femur, tibia)
-  0, -30, -60   -- back right leg (coxa, femur, tibia)
+  0, -25, -60,  -- front right leg (coxa, femur, tibia)
+  0, -25, -60, -- front left leg (coxa, femur, tibia)
+  0, -25, -60, -- back left leg (coxa, femur, tibia)
+  0, -25, -60   -- back right leg (coxa, femur, tibia)
 }
 
 -- Adapted rom https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua
