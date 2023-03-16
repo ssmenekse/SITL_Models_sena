@@ -2196,7 +2196,7 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_bl_joint</joint_name>
       <topic>/femur_bl_joint/cmd_pos</topic>
-      <initial_position>-0.6</initial_position>
+      <initial_position>-0.5</initial_position>
       <p_gain>10</p_gain>
       <i_gain>0</i_gain>
       <d_gain>0.1</d_gain>
@@ -2235,7 +2235,7 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_br_joint</joint_name>
       <topic>/femur_br_joint/cmd_pos</topic>
-      <initial_position>-0.6</initial_position>
+      <initial_position>-0.5</initial_position>
       <p_gain>10</p_gain>
       <i_gain>0</i_gain>
       <d_gain>0.1</d_gain>
@@ -2274,7 +2274,7 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_fl_joint</joint_name>
       <topic>/femur_fl_joint/cmd_pos</topic>
-      <initial_position>-0.6</initial_position>
+      <initial_position>-0.5</initial_position>
       <p_gain>10</p_gain>
       <i_gain>0</i_gain>
       <d_gain>0.1</d_gain>
@@ -2313,7 +2313,7 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_fr_joint</joint_name>
       <topic>/femur_fr_joint/cmd_pos</topic>
-      <initial_position>-0.6</initial_position>
+      <initial_position>-0.5</initial_position>
       <p_gain>10</p_gain>
       <i_gain>0</i_gain>
       <d_gain>0.1</d_gain>
@@ -2352,7 +2352,7 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_ml_joint</joint_name>
       <topic>/femur_ml_joint/cmd_pos</topic>
-      <initial_position>-0.6</initial_position>
+      <initial_position>-0.5</initial_position>
       <p_gain>10</p_gain>
       <i_gain>0</i_gain>
       <d_gain>0.1</d_gain>
@@ -2391,7 +2391,7 @@
         name="gz::sim::systems::JointPositionController">
       <joint_name>femur_mr_joint</joint_name>
       <topic>/femur_mr_joint/cmd_pos</topic>
-      <initial_position>-0.6</initial_position>
+      <initial_position>-0.5</initial_position>
       <p_gain>10</p_gain>
       <i_gain>0</i_gain>
       <d_gain>0.1</d_gain>
