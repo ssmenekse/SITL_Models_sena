@@ -1,4 +1,4 @@
-FRAME_CLASS      15.0        # Scripting Matrix
+FRAME_CLASS      17.0        # Dynamic Scripting Matrix
 FRAME_TYPE       1           # X
 SERVO_32_ENABLE  1
 

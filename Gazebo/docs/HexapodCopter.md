@@ -7,7 +7,7 @@ The original quadruped version of this frame is the result of Ashvath's project 
 
 ![hexapod_copter_hover](https://user-images.githubusercontent.com/24916364/225340320-9aa31fe2-4602-4036-ba6b-491f72097c01.jpg)
 
-The frame is fully articulated. Each of the 6 legs has 3 joints, however only 16 are actuated. The middle two 'hip' joints are fixed in this example. The motor ordering and orientation is the same as a standard hexa X frame, however in this case the FRAME_CLASS 15 (Scripting Matrix) and the motor mixing is set in the Lua script.
+The frame is fully articulated. Each of the 6 legs has 3 joints, however only 16 are actuated. The middle two 'hip' joints are fixed in this example. The motor ordering and orientation is the same as a standard hexa X frame, however in this case the FRAME_CLASS 17 (Dynamic Scripting Matrix) and the motor mixing is set in the Lua script.
 
 The legs have two positions - folded when disarmed, and unfolded when armed.
 
