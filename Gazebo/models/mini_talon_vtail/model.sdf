@@ -70,11 +70,11 @@
         </geometry>
       </visual>
 
-      <visual name="cockpit_frame_visual">
+      <visual name="forward_deck_visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_cockpit_frame.dae</uri>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_forward_deck.dae</uri>
           </mesh>
         </geometry>
       </visual>
