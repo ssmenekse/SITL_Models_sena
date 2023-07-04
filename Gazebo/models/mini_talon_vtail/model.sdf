@@ -61,15 +61,6 @@
         </geometry>
       </collision>
 
-      <!-- <collision name="main_wheel_collision">
-        <pose degrees="true">0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_main_wheel_collision.stl</uri>
-          </mesh>
-        </geometry>
-      </collision> -->
-
       <visual name="fuselage_visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
         <geometry>
@@ -158,15 +149,6 @@
           </mesh>
         </geometry>
       </visual>
-
-      <!-- <visual name="main_wheel_visual">
-        <pose degrees="true">0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_main_wheel.dae</uri>
-          </mesh>
-        </geometry>
-      </visual> -->
 
       <!-- Sensors. -->
       <sensor name="imu_sensor" type="imu">
