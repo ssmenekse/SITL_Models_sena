@@ -560,6 +560,101 @@
       <min_thrust_cmd>0.0</min_thrust_cmd>
     </plugin>
 
+    <plugin name="ArduPilotPlugin"
+      filename="ArduPilotPlugin">
+      <!-- Port settings. -->
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <lock_step>1</lock_step>
+      <have_32_channels>0</have_32_channels>
+
+      <!-- Frame transforms.-->
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      <gazeboXYZToNED>0 0 0 3.141593 0 1.57079632</gazeboXYZToNED>
+
+      <!-- Sensors. -->
+      <imuName>base_link::imu_sensor</imuName>
+
+      <!-- 
+          SERVO1_FUNCTION   4 (Aileron)
+          SERVO1_MAX        2000
+          SERVO1_MIN        1000
+          SERVO1_REVERSED   0
+          SERVO1_TRIM       1500
+       -->
+      <control channel="0">
+        <jointName>left_aileron_joint</jointName>
+        <multiplier>-1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>/left_aileron_joint/cmd_pos</cmd_topic>
+      </control>
+
+      <control channel="0">
+        <jointName>right_aileron_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>/right_aileron_joint/cmd_pos</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO2_FUNCTION   79 (Left V-Tail)
+          SERVO2_MAX        2000
+          SERVO2_MIN        1000
+          SERVO2_REVERSED   0
+          SERVO2_TRIM       1500
+       -->
+      <control channel="1">
+        <jointName>left_ruddervator_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>/left_ruddervator_joint/cmd_pos</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO3_FUNCTION   70 (Throttle)
+          SERVO3_MAX        2000
+          SERVO3_MIN        1000
+          SERVO3_REVERSED   0
+          SERVO3_TRIM       1000
+       -->
+      <control channel="2"> 
+        <jointName>motor_joint</jointName>
+        <multiplier>830</multiplier>
+        <offset>0</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>/model/mini_talon_vtail/joint/motor_joint/cmd_vel</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO4_FUNCTION   80 (Right V-Tail)
+          SERVO4_MAX        2000
+          SERVO4_MIN        1000
+          SERVO4_REVERSED   0
+          SERVO4_TRIM       1500
+       -->
+      <control channel="3">
+        <jointName>right_ruddervator_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>/right_ruddervator_joint/cmd_pos</cmd_topic>
+      </control>
+
+    </plugin>
 
   </model>
 </sdf>
