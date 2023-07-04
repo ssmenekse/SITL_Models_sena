@@ -115,6 +115,39 @@
         </geometry>
       </visual>
 
+      <visual name="motor_plate_visual">
+        <pose degrees="true">-0.41 0 -0.03 0 90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/propdrive_3536_frontplate.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="motor_can_visual">
+        <pose degrees="true">-0.41 0 -0.03 0 90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/propdrive_3536_motor_can.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="propeller_visual">
+        <pose degrees="true">-0.415 0 -0.03 0 90 180</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/iris_prop_cw.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0.01 0.01 0.01 1</diffuse>
+          <specular>0.01 0.01 0.01 1</specular>
+        </material>
+      </visual>
+
+
       <!-- Sensors. -->
       <sensor name="imu_sensor" type="imu">
         <pose degrees="true">0 0 0 180 0 0</pose>
