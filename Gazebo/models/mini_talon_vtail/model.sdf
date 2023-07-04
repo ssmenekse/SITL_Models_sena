@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="mini_talon_vtail">
+
+    <link name="base_link">
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>1.0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.0</iyy>
+          <iyz>0</iyz>
+          <izz>1.0</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="fuselage_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_fuselage_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="left_wing_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_wing_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="right_wing_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_wing_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="left_tail_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_tail_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="right_tail_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_tail_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="main_wheel_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_main_wheel_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="fuselage_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_fuselage.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="cockpit_frame_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_cockpit_frame.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="left_wing_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_wing.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="right_wing_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_wing.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="left_tail_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_tail.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="right_tail_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_tail.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="left_aileron_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="right_aileron_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="left_rudder_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="right_rudder_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="main_wheel_visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_main_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Sensors. -->
+      <sensor name="imu_sensor" type="imu">
+        <pose degrees="true">0 0 0 180 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>1</update_rate>
+      </sensor>
+    </link>
+
+  </model>
+</sdf>
+
