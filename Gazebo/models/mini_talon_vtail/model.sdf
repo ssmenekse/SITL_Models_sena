@@ -115,24 +115,6 @@
         </geometry>
       </visual>
 
-      <!-- <visual name="left_rudder_visual">
-        <pose degrees="true">0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_left_rudder.dae</uri>
-          </mesh>
-        </geometry>
-      </visual> -->
-
-      <!-- <visual name="right_rudder_visual">
-        <pose degrees="true">0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_right_rudder.dae</uri>
-          </mesh>
-        </geometry>
-      </visual> -->
-
       <!-- Sensors. -->
       <sensor name="imu_sensor" type="imu">
         <pose degrees="true">0 0 0 180 0 0</pose>
