@@ -115,23 +115,23 @@
         </geometry>
       </visual>
 
-      <visual name="left_rudder_visual">
+      <!-- <visual name="left_rudder_visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://mini_talon_vtail/meshes/mini_talon_left_rudder.dae</uri>
           </mesh>
         </geometry>
-      </visual>
+      </visual> -->
 
-      <visual name="right_rudder_visual">
+      <!-- <visual name="right_rudder_visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://mini_talon_vtail/meshes/mini_talon_right_rudder.dae</uri>
           </mesh>
         </geometry>
-      </visual>
+      </visual> -->
 
       <!-- Sensors. -->
       <sensor name="imu_sensor" type="imu">
@@ -303,6 +303,119 @@
       </axis>
     </joint>
 
+    <link name="left_rudder_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.010</mass>
+        <inertia>
+          <ixx>0.06446</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000651</iyy>
+          <iyz>0</iyz>
+          <izz>0.06500</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_rudder_visual">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="cp_left_rudder_visual">
+        <pose degrees="true">-0.356979 0.073648 0.040507 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 1 1</ambient>
+          <diffuse>1 0 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <collision name="left_rudder_collision">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="left_rudder_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.356979 0.073648 0.040507 45 -15 0</pose>
+      <parent>base_link</parent>
+      <child>left_rudder_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+        </limit>
+        <dynamics>
+          <damping>0.0001</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="right_rudder_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.010</mass>
+        <inertia>
+          <ixx>0.06446</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000651</iyy>
+          <iyz>0</iyz>
+          <izz>0.06500</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_rudder_visual">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="cp_right_rudder_visual">
+        <pose degrees="true">-0.356979 -0.073648 0.040507 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 1 1</ambient>
+          <diffuse>1 0 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <collision name="right_rudder_collision">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="right_rudder_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.356979 -0.073648 0.040507 -45 -15 0</pose>
+      <parent>base_link</parent>
+      <child>right_rudder_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+        </limit>
+        <dynamics>
+          <damping>0.0001</damping>
+        </dynamics>
+      </axis>
+    </joint>
 
     <!-- System plugins. -->
     <plugin filename="gz-sim-joint-state-publisher-system"
@@ -316,13 +429,13 @@
       <joint_name>left_aileron_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/left_aileron_joint/cmd_pos</topic>
-      <p_gain>2</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>0.1</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>100</cmd_max>
-      <cmd_min>-100</cmd_min>
+      <p_gain>5</p_gain>
+      <i_gain>0.5</i_gain>
+      <d_gain>0.5</d_gain>
+      <i_max>5</i_max>
+      <i_min>-5</i_min>
+      <cmd_max>200</cmd_max>
+      <cmd_min>-200</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
@@ -332,13 +445,45 @@
       <joint_name>right_aileron_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/right_aileron_joint/cmd_pos</topic>
-      <p_gain>2</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>0.1</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>100</cmd_max>
-      <cmd_min>-100</cmd_min>
+      <p_gain>5</p_gain>
+      <i_gain>0.5</i_gain>
+      <d_gain>0.5</d_gain>
+      <i_max>5</i_max>
+      <i_min>-5</i_min>
+      <cmd_max>200</cmd_max>
+      <cmd_min>-200</cmd_min>
+    </plugin>
+
+    <!-- Positive is up. -->
+    <plugin
+      filename="gz-sim-joint-position-controller-system"
+      name="gz::sim::systems::JointPositionController">
+      <joint_name>left_rudder_joint</joint_name>
+      <initial_position>0.0</initial_position>
+      <topic>/left_rudder_joint/cmd_pos</topic>
+      <p_gain>5</p_gain>
+      <i_gain>0.5</i_gain>
+      <d_gain>0.5</d_gain>
+      <i_max>5</i_max>
+      <i_min>-5</i_min>
+      <cmd_max>200</cmd_max>
+      <cmd_min>-200</cmd_min>
+    </plugin>
+
+    <!-- Positive is up. -->
+    <plugin
+      filename="gz-sim-joint-position-controller-system"
+      name="gz::sim::systems::JointPositionController">
+      <joint_name>right_rudder_joint</joint_name>
+      <initial_position>0.0</initial_position>
+      <topic>/right_rudder_joint/cmd_pos</topic>
+      <p_gain>5</p_gain>
+      <i_gain>0.5</i_gain>
+      <d_gain>0.5</d_gain>
+      <i_max>5</i_max>
+      <i_min>-5</i_min>
+      <cmd_max>200</cmd_max>
+      <cmd_min>-200</cmd_min>
     </plugin>
 
   </model>
