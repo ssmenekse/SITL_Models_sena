@@ -124,30 +124,6 @@
         </geometry>
       </visual>
 
-      <visual name="motor_can_visual">
-        <pose degrees="true">-0.41 0 -0.03 0 90 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/propdrive_3536_motor_can.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-
-      <visual name="propeller_visual">
-        <pose degrees="true">-0.415 0 -0.03 0 90 180</pose>
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/iris_prop_cw.dae</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <ambient>0.01 0.01 0.01 1</ambient>
-          <diffuse>0.01 0.01 0.01 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-        </material>
-      </visual>
-
-
       <!-- Sensors. -->
       <sensor name="imu_sensor" type="imu">
         <pose degrees="true">0 0 0 180 0 0</pose>
@@ -432,6 +408,75 @@
       </axis>
     </joint>
 
+    <link name="motor_link">
+      <pose degrees="true">-0.41 0 -0.03 0 90 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>0.00044</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00078</iyy>
+          <iyz>0</iyz>
+          <izz>0.00044</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="motor_collision">
+        <pose degrees="true">0 0 0.018 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0175</radius>
+            <length>0.036</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="propeller_collision">
+        <pose degrees="true">0 0 -0.005 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.005</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="motor_visual">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/propdrive_3536_motor_can.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="propeller_visual">
+        <pose degrees="true">0 0 -0.005 0 180 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/iris_prop_cw.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0.01 0.01 0.01 1</diffuse>
+          <specular>0.01 0.01 0.01 1</specular>
+        </material>
+      </visual>
+    </link>
+    <joint name="motor_joint" type="revolute">
+      <pose degrees="true">0 0 0 0 180 0</pose>
+      <parent>base_link</parent>
+      <child>motor_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.0e-16</lower>
+          <upper>1.0e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.0001</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
     <!-- System plugins. -->
     <plugin filename="gz-sim-joint-state-publisher-system"
       name="gz::sim::systems::JointStatePublisher">
@@ -501,6 +546,49 @@
       <cmd_min>-200</cmd_min>
     </plugin>
 
+    <!-- Positive is forward. -->
+    <plugin
+      filename="gz-sim-thruster-system"
+      name="gz::sim::systems::Thruster">
+      <namespace>mini_talon_vtail</namespace>
+      <joint_name>motor_joint</joint_name>
+      <thrust_coefficient>-0.01</thrust_coefficient>
+      <fluid_density>1.2041</fluid_density>
+      <propeller_diameter>0.254</propeller_diameter>
+      <use_angvel_cmd>1</use_angvel_cmd>
+      <max_thrust_cmd>1000.0</max_thrust_cmd>
+      <min_thrust_cmd>0.0</min_thrust_cmd>
+    </plugin>
+
+
   </model>
 </sdf>
+
+<!-- 
+  Motor thrust calcs (initial estimates)
+
+  PropDrive 3536 910kV motor
+  3S battery (11.1V)
+  rpm_max = 10000
+  rpm = 8000
+  ang_max = 1057
+  ang_vel = 837
+  10x7 prop
+
+
+  Position and thrust controller commands
+
+  Thrust:
+
+  gz topic -t /model/mini_talon_vtail/joint/motor_joint/cmd_vel -m gz.msgs.Double -p 'data: 1000'
+
+  Aileron:
+
+  gz topic -t /right_aileron_joint/cmd_pos -m gz.msgs.Double -p 'data: 1'
+
+  Rudder:
+
+  gz topic -t /left_rudder_joint/cmd_pos -m gz.msgs.Double -p 'data: 1'
+
+  -->
 
