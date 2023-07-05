@@ -128,7 +128,7 @@
         <pose degrees="true">0 0.27 0.029 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.02</radius>
+            <radius>0.015</radius>
           </sphere>
         </geometry>
         <material>
@@ -142,7 +142,35 @@
         <pose degrees="true">0 -0.27 0.029 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.02</radius>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <visual name="cp_left_vtail_visual">
+        <pose degrees="true">-0.33 0.08 0.051 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <visual name="cp_right_vtail_visual">
+        <pose degrees="true">-0.33 -0.08 0.051 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
           </sphere>
         </geometry>
         <material>
@@ -323,18 +351,25 @@
     </joint>
 
     <link name="left_ruddervator_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose degrees="true">-0.365 0.077 0.045 45 -10 6</pose>
       <inertial>
-        <mass>0.010</mass>
+        <mass>0.01</mass>
         <inertia>
-          <ixx>0.06446</ixx>
+          <ixx>1.97842E-05</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000651</iyy>
+          <iyy>3.02083E-06</iyy>
           <iyz>0</iyz>
-          <izz>0.06500</izz>
+          <izz>2.27633E-05</izz>
         </inertia>
       </inertial>
+      <collision name="left_ruddervator_collision">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_ruddervator.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_ruddervator_visual">
         <geometry>
           <mesh>
@@ -343,7 +378,6 @@
         </geometry>
       </visual>
       <visual name="cp_left_ruddervator_visual">
-        <pose degrees="true">-0.356979 0.073648 0.040507 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.01</radius>
@@ -355,16 +389,9 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <collision name="left_ruddervator_collision">
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_left_ruddervator.dae</uri>
-          </mesh>
-        </geometry>
-      </collision>
     </link>
     <joint name="left_ruddervator_joint" type="revolute">
-      <pose relative_to="base_link" degrees="true">-0.356979 0.073648 0.040507 45 -15 0</pose>
+      <pose degrees="true">0.01 0 0 0 0 0</pose>
       <parent>base_link</parent>
       <child>left_ruddervator_link</child>
       <axis>
@@ -380,18 +407,25 @@
     </joint>
 
     <link name="right_ruddervator_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose degrees="true">-0.365 -0.077 0.045 -45 -10 -6</pose>
       <inertial>
-        <mass>0.010</mass>
+        <mass>0.01</mass>
         <inertia>
-          <ixx>0.06446</ixx>
+          <ixx>1.97842E-05</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000651</iyy>
+          <iyy>3.02083E-06</iyy>
           <iyz>0</iyz>
-          <izz>0.06500</izz>
+          <izz>2.27633E-05</izz>
         </inertia>
       </inertial>
+      <collision name="right_ruddervator_collision">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_ruddervator.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_ruddervator_visual">
         <geometry>
           <mesh>
@@ -400,7 +434,6 @@
         </geometry>
       </visual>
       <visual name="cp_right_ruddervator_visual">
-        <pose degrees="true">-0.356979 -0.073648 0.040507 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.01</radius>
@@ -412,16 +445,9 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <collision name="right_ruddervator_collision">
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_right_ruddervator.dae</uri>
-          </mesh>
-        </geometry>
-      </collision>
     </link>
     <joint name="right_ruddervator_joint" type="revolute">
-      <pose relative_to="base_link" degrees="true">-0.356979 -0.073648 0.040507 -45 -15 0</pose>
+      <pose degrees="true">0.01 0 0 0 0 0</pose>
       <parent>base_link</parent>
       <child>right_ruddervator_link</child>
       <axis>
@@ -549,13 +575,13 @@
       <joint_name>left_ruddervator_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/left_ruddervator_joint/cmd_pos</topic>
-      <p_gain>5</p_gain>
-      <i_gain>0.5</i_gain>
-      <d_gain>0.5</d_gain>
-      <i_max>5</i_max>
-      <i_min>-5</i_min>
-      <cmd_max>200</cmd_max>
-      <cmd_min>-200</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>0.0001</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
@@ -565,13 +591,13 @@
       <joint_name>right_ruddervator_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/right_ruddervator_joint/cmd_pos</topic>
-      <p_gain>5</p_gain>
-      <i_gain>0.5</i_gain>
-      <d_gain>0.5</d_gain>
-      <i_max>5</i_max>
-      <i_min>-5</i_min>
-      <cmd_max>200</cmd_max>
-      <cmd_min>-200</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>0.0001</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <!-- Positive is forward. -->
@@ -668,6 +694,86 @@
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
       <control_joint_name>right_aileron_joint</control_joint_name>
+      <control_joint_rad_to_cl>-4.0</control_joint_rad_to_cl>
+    </plugin>
+
+    <!-- left v-tail -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.13</a0>
+      <cla>3.7</cla>
+      <cda>0.06417112299</cda>
+      <cma>0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.33 0.08 0.051</cp>
+      <area>0.025</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 1 1</upward>
+      <link_name>base_link</link_name>
+    </plugin>
+
+    <!-- right v-tail -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.13</a0>
+      <cla>3.7</cla>
+      <cda>0.06417112299</cda>
+      <cma>0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.33 -0.08 0.051</cp>
+      <area>0.025</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 -1 1</upward>
+      <link_name>base_link</link_name>
+    </plugin>
+
+    <!-- left ruddervator -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.13</a0>
+      <cla>3.7</cla>
+      <cda>0.06417112299</cda>
+      <cma>0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.33 0.08 0.051</cp>
+      <area>0.0065</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 1 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>left_ruddervator_joint</control_joint_name>
+      <control_joint_rad_to_cl>-4.0</control_joint_rad_to_cl>
+    </plugin>
+
+    <!-- right ruddervator -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.13</a0>
+      <cla>3.7</cla>
+      <cda>0.06417112299</cda>
+      <cma>0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.33 -0.08 0.051</cp>
+      <area>0.0065</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 -1 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>right_ruddervator_joint</control_joint_name>
       <control_joint_rad_to_cl>-4.0</control_joint_rad_to_cl>
     </plugin>
 
@@ -781,6 +887,37 @@
   ang_vel = 837
   10x7 prop
 
+  Inertials
+
+  fuselage:
+  mass: 
+  radius: 0.16 m
+  length: 0.8 m
+
+  main wheel:
+  mass: 
+  radius: 0.0135 m
+  length: 0.014 m
+
+  L/R wing
+  mass: 
+  area: 0.65 x 0.245 = 0.16 m^2
+  cp: 
+
+  L/R aileron
+  mass:
+  area: 0.237 x 0.0477 = 0.011 m^2
+  cp: 
+
+  L/R v-tail
+  mass: 
+  area: 0.126 x 0.197 = 0.025 m^2
+  cp: 
+
+  L/R ruddervator
+  mass: 
+  area: 0.042 x 0.154 = 0.0065 m^2
+  cp: 
 
   Position and thrust controller commands
 
