@@ -209,18 +209,25 @@
     </joint>
 
     <link name="left_aileron_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose degrees="true">-0.107 0.371 0.0174 0 0 0</pose>
       <inertial>
-        <mass>0.010</mass>
+        <mass>0.01</mass>
         <inertia>
-          <ixx>0.06446</ixx>
+          <ixx>4.68283E-05</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000651</iyy>
+          <iyy>2.54167E-06</iyy>
           <iyz>0</iyz>
-          <izz>0.06500</izz>
+          <izz>4.93283E-05</izz>
         </inertia>
       </inertial>
+      <collision name="left_aileron_collision">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_left_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_aileron_visual">
         <geometry>
           <mesh>
@@ -229,7 +236,6 @@
         </geometry>
       </visual>
       <visual name="cp_left_aileron_visual">
-        <pose degrees="true">-0.093463 0.374976 0.01547 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.01</radius>
@@ -241,16 +247,9 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <collision name="left_aileron_collision">
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_left_aileron.dae</uri>
-          </mesh>
-        </geometry>
-      </collision>
     </link>
     <joint name="left_aileron_joint" type="revolute">
-      <pose relative_to="base_link" degrees="true">-0.093463 0.374976 0.01547 0 0 0</pose>
+      <pose degrees="true">0.015 0 0 0 0 0</pose>
       <parent>base_link</parent>
       <child>left_aileron_link</child>
       <axis>
@@ -266,19 +265,28 @@
     </joint>
 
     <link name="right_aileron_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose degrees="true">-0.107 -0.371 0.0174 0 0 0</pose>
       <inertial>
-        <mass>0.010</mass>
+        <mass>0.01</mass>
         <inertia>
-          <ixx>0.06446</ixx>
+          <ixx>4.68283E-05</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000651</iyy>
+          <iyy>2.54167E-06</iyy>
           <iyz>0</iyz>
-          <izz>0.06500</izz>
+          <izz>4.93283E-05</izz>
         </inertia>
       </inertial>
+      <collision name="right_aileron_collision">
+        <pose degrees="true">0.005 -0.002 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_right_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_aileron_visual">
+        <pose degrees="true">0.005 -0.002 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://mini_talon_vtail/meshes/mini_talon_right_aileron.dae</uri>
@@ -286,7 +294,6 @@
         </geometry>
       </visual>
       <visual name="cp_right_aileron_visual">
-        <pose degrees="true">-0.093463 -0.374976 0.01547 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.01</radius>
@@ -298,16 +305,9 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <collision name="right_aileron_collision">
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_right_aileron.dae</uri>
-          </mesh>
-        </geometry>
-      </collision>
     </link>
     <joint name="right_aileron_joint" type="revolute">
-      <pose relative_to="base_link" degrees="true">-0.093463 -0.374976 0.01547 0 0 0</pose>
+      <pose degrees="true">0.015 0 0 0 0 0</pose>
       <parent>base_link</parent>
       <child>right_aileron_link</child>
       <axis>
@@ -517,13 +517,13 @@
       <joint_name>left_aileron_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/left_aileron_joint/cmd_pos</topic>
-      <p_gain>5</p_gain>
-      <i_gain>0.5</i_gain>
-      <d_gain>0.5</d_gain>
-      <i_max>5</i_max>
-      <i_min>-5</i_min>
-      <cmd_max>200</cmd_max>
-      <cmd_min>-200</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>0.0001</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
@@ -533,13 +533,13 @@
       <joint_name>right_aileron_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/right_aileron_joint/cmd_pos</topic>
-      <p_gain>5</p_gain>
-      <i_gain>0.5</i_gain>
-      <d_gain>0.5</d_gain>
-      <i_max>5</i_max>
-      <i_min>-5</i_min>
-      <cmd_max>200</cmd_max>
-      <cmd_min>-200</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>0.0001</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
