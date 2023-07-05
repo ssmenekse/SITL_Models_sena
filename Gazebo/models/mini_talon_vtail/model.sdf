@@ -177,13 +177,6 @@
           <izz>1.71125E-06</izz>
         </inertia>
       </inertial>
-      <visual name="main_wheel_visual">
-        <geometry>
-          <mesh>
-            <uri>model://mini_talon_vtail/meshes/mini_talon_main_wheel.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
       <collision name="main_wheel_collision">
         <geometry>
           <mesh>
@@ -191,6 +184,13 @@
           </mesh>
         </geometry>
       </collision>
+      <visual name="main_wheel_visual">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/mini_talon_main_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
     <joint name="main_wheel_joint" type="revolute">
       <pose degrees="true">0 0 0 0 0 0</pose>
