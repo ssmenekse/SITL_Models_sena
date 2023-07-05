@@ -465,7 +465,7 @@
     <link name="motor_link">
       <pose degrees="true">-0.41 0 -0.03 0 90 0</pose>
       <inertial>
-        <mass>0.106</mass>
+        <!-- <mass>0.106</mass>
         <inertia>
           <ixx>1.95636E-05</ixx>
           <ixy>0</ixy>
@@ -473,6 +473,15 @@
           <iyy>1.95636E-05</iyy>
           <iyz>0</iyz>
           <izz>1.62313E-05</izz>
+        </inertia> -->
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
         </inertia>
       </inertial>
 
@@ -526,7 +535,7 @@
           <upper>1.0e+16</upper>
         </limit>
         <dynamics>
-          <damping>0.0001</damping>
+          <damping>0.004</damping>
         </dynamics>
       </axis>
     </joint>
@@ -543,13 +552,13 @@
       <joint_name>left_aileron_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/left_aileron_joint/cmd_pos</topic>
-      <p_gain>0.1</p_gain>
+      <p_gain>2</p_gain>
       <i_gain>0.01</i_gain>
       <d_gain>0.0001</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>5</cmd_max>
-      <cmd_min>-5</cmd_min>
+      <cmd_max>100</cmd_max>
+      <cmd_min>-100</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
@@ -559,13 +568,13 @@
       <joint_name>right_aileron_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/right_aileron_joint/cmd_pos</topic>
-      <p_gain>0.1</p_gain>
+      <p_gain>2</p_gain>
       <i_gain>0.01</i_gain>
       <d_gain>0.0001</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>5</cmd_max>
-      <cmd_min>-5</cmd_min>
+      <cmd_max>100</cmd_max>
+      <cmd_min>-100</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
@@ -575,13 +584,13 @@
       <joint_name>left_ruddervator_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/left_ruddervator_joint/cmd_pos</topic>
-      <p_gain>0.1</p_gain>
+      <p_gain>2</p_gain>
       <i_gain>0.01</i_gain>
       <d_gain>0.0001</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>5</cmd_max>
-      <cmd_min>-5</cmd_min>
+      <cmd_max>100</cmd_max>
+      <cmd_min>-100</cmd_min>
     </plugin>
 
     <!-- Positive is up. -->
@@ -591,17 +600,17 @@
       <joint_name>right_ruddervator_joint</joint_name>
       <initial_position>0.0</initial_position>
       <topic>/right_ruddervator_joint/cmd_pos</topic>
-      <p_gain>0.1</p_gain>
+      <p_gain>2</p_gain>
       <i_gain>0.01</i_gain>
       <d_gain>0.0001</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>5</cmd_max>
-      <cmd_min>-5</cmd_min>
+      <cmd_max>100</cmd_max>
+      <cmd_min>-100</cmd_min>
     </plugin>
 
     <!-- Positive is forward. -->
-    <plugin
+    <!-- <plugin
       filename="gz-sim-thruster-system"
       name="gz::sim::systems::Thruster">
       <namespace>mini_talon_vtail</namespace>
@@ -615,6 +624,42 @@
       <d_gain>0.0</d_gain>
       <max_thrust_cmd>2000.0</max_thrust_cmd>
       <min_thrust_cmd>-2000.0</min_thrust_cmd>
+    </plugin> -->
+
+    <!-- motor_joint cw -->
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.02</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_link</link_name>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.25</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.02</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_link</link_name>
     </plugin>
 
     <!-- left wing -->
@@ -747,13 +792,13 @@
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
       <cp>-0.33 0.08 0.051</cp>
-      <area>0.0065</area>
+      <area>0.007</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 1 1</upward>
       <link_name>base_link</link_name>
       <control_joint_name>left_ruddervator_joint</control_joint_name>
-      <control_joint_rad_to_cl>-4.0</control_joint_rad_to_cl>
+      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
     </plugin>
 
     <!-- right ruddervator -->
@@ -768,13 +813,13 @@
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
       <cp>-0.33 -0.08 0.051</cp>
-      <area>0.0065</area>
+      <area>0.007</area>
       <air_density>1.2041</air_density>
       <forward>1 0 0</forward>
       <upward>0 -1 1</upward>
       <link_name>base_link</link_name>
       <control_joint_name>right_ruddervator_joint</control_joint_name>
-      <control_joint_rad_to_cl>-4.0</control_joint_rad_to_cl>
+      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
     </plugin>
 
     <plugin name="ArduPilotPlugin"
@@ -850,8 +895,18 @@
         <offset>0</offset>
         <servo_min>1000</servo_min>
         <servo_max>2000</servo_max>
-        <type>COMMAND</type>
-        <cmd_topic>/model/mini_talon_vtail/joint/motor_joint/cmd_vel</cmd_topic>
+        <!-- <type>COMMAND</type>
+        <cmd_topic>/model/mini_talon_vtail/joint/motor_joint/cmd_vel</cmd_topic> -->
+
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+
       </control>
 
       <!-- 
