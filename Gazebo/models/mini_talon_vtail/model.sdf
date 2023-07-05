@@ -798,7 +798,7 @@
       <upward>0 1 1</upward>
       <link_name>base_link</link_name>
       <control_joint_name>left_ruddervator_joint</control_joint_name>
-      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+      <control_joint_rad_to_cl>-6.0</control_joint_rad_to_cl>
     </plugin>
 
     <!-- right ruddervator -->
@@ -819,7 +819,7 @@
       <upward>0 -1 1</upward>
       <link_name>base_link</link_name>
       <control_joint_name>right_ruddervator_joint</control_joint_name>
-      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+      <control_joint_rad_to_cl>-6.0</control_joint_rad_to_cl>
     </plugin>
 
     <plugin name="ArduPilotPlugin"
