@@ -137,16 +137,16 @@
     </link>
 
     <link name="main_wheel_link">
-      <pose degrees="true">0 0 0 0 0 0</pose>
+      <pose degrees="true">0.302018 0 -0.097974 90 0 0</pose>
       <inertial>
-        <mass>0.05</mass>
+        <mass>0.01</mass>
         <inertia>
-          <ixx>0.00044</ixx>
+          <ixx>1.01896E-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00078</iyy>
+          <iyy>1.01896E-06</iyy>
           <iyz>0</iyz>
-          <izz>0.00044</izz>
+          <izz>1.71125E-06</izz>
         </inertia>
       </inertial>
       <visual name="main_wheel_visual">
@@ -165,11 +165,11 @@
       </collision>
     </link>
     <joint name="main_wheel_joint" type="revolute">
-      <pose degrees="true">0.302018 0 -0.097974 0 0 0</pose>
+      <pose degrees="true">0 0 0 0 0 0</pose>
       <parent>base_link</parent>
       <child>main_wheel_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <lower>-1.0e-16</lower>
           <upper>1.0e+16</upper>
