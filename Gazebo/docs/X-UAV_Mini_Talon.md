@@ -17,13 +17,13 @@ $HOME/SITL_Models/Gazebo/worlds
 #### Run Gazebo
 
 ```bash
-$ gz sim -v4 -r vtail_runway.sdf
+gz sim -v4 -r vtail_runway.sdf
 ```
 
 #### Run ArduPilot SITL
 
 ```bash
-$ sim_vehicle.py -v ArduPlane -f JSON --add-param-file=$HOME/SITL_Models/Gazebo/config/mini_talon_vtail.param --console --map
+sim_vehicle.py -v ArduPlane -f JSON --add-param-file=$HOME/SITL_Models/Gazebo/config/mini_talon_vtail.param --console --map
 ```
 
 ## Specifications
@@ -47,10 +47,10 @@ $ sim_vehicle.py -v ArduPlane -f JSON --add-param-file=$HOME/SITL_Models/Gazebo/
 ## Credits
 
 - Original Mini Talon X-UAV CAD model by Alessandro Bacchini,
-retrieved from GradCAD 04 July 2023.
+retrieved from GrabCAD 04 July 2023.
   - https://grabcad.com/alessandro.bacchini-2
   - https://grabcad.com/library/mini-talon-x-uav-1
 
-- PropDrive 3536 motor model by Seth Schaffer, retrieved from GradCAD 04 July 2023.
+- PropDrive 3536 motor model by Seth Schaffer, retrieved from GrabCAD 04 July 2023.
   - https://grabcad.com/seth.schaffer-1
   - https://grabcad.com/library/configurable-propdrive-v2-brushless-motor-with-mount-plate-solidworks-2019-1
