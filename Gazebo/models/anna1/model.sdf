@@ -1,7 +1,39 @@
 <?xml version='1.0'?>
-<sdf version='1.7'>
+<!--
+  Issues
+
+  1. <gazeboXYZToNED>0 0 0 180 0 90</gazeboXYZToNED>
+  
+  Missing degrees="true", should be 
+  
+    <gazeboXYZToNED degrees="true">0 0 0 180 0 90</gazeboXYZToNED>
+
+  2. IMU sensor rotated 90 about z
+    
+    <pose>0 0 0 3.141593 0 -1.5708</pose>
+
+    Should be rotated 180 about x-axis so z points down
+
+    <pose degrees="true">0 0 0 180 0 0</pose>
+
+   3. velocity controllers. I gain will have no effect because
+      it is clamped to [0, 0]. Prob not needed anyway.
+
+      max output from controller is low (+/- 3 N) which is low for
+      a 15 kg model. may be unresponsive under load.
+
+    <i_gain>0.1</i_gain>
+    <d_gain>0</d_gain>
+    <i_max>0</i_max>
+    <i_min>0</i_min>
+    <cmd_max>3</cmd_max>
+    <cmd_min>-3</cmd_min>
+
+  4. <script> elements are not valid in Gazebo Garden materials
+ -->
+<sdf version='1.9'>
   <model name='anna1'>
-    <pose>0 0 0.5 0 0 0</pose>
+    <!-- <pose>0 0 0.5 0 0 0</pose> -->
     <self_collide>0</self_collide>
     <static>0</static>
     <link name="base_link">
@@ -22,7 +54,8 @@
         <pose>0 0 0 0 0 0</pose>
       </inertial>
       <gravity>1</gravity>
-      <visual name="base_link_visual">
+
+      <!-- <visual name="base_link_visual">
         <pose>0 0 .025 0 0 0</pose>
         <geometry>
           <mesh>
@@ -36,7 +69,68 @@
             <name>Gazebo/DarkGrey</name>
           </script>
         </material>
+      </visual> -->
+
+      <visual name="base_link_visual_0">
+        <pose>0 -0.03 .127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.35355339059327373 0.443553 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
       </visual>
+      <visual name='base_link_visual_2'>
+        <pose>-0.24 -0.025 -0.25 0.35 0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.015 0.45</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <visual name='base_link_visual_1'>
+        <pose>0.22 -0.025 -0.25 -0.35 0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.015 0.45</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <visual name='base_link_visual_3'>
+        <pose>-0.31 -0.022 -0.465 0 0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.015 0.015</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <visual name='base_link_visual_4'>
+        <pose>0.3 -0.022 -0.465 0 0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.015 0.015</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+]      </visual>
       
       <collision name="base_link_collision_0">
         <pose>0 -0.03 .127 0 0 0</pose>
@@ -148,13 +242,14 @@
           </friction>
         </surface>
       </collision>
+
       <sensor name="imu_sensor" type="imu">
-        <pose>0 0 0 3.141593 0 -1.5708</pose>
+        <pose dgrees="true">0 0 0 180 0 0</pose>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
       </sensor>
     </link>
-    <link name='battery_0'>
+    <!-- <link name='battery_0'>
       <pose>0.05 0.09 -0.08 0 0 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -241,7 +336,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-	  <damping>0.004</damping>
+      	  <damping>0.004</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -338,7 +433,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-	  <damping>0.004</damping>
+      	  <damping>0.004</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -347,8 +442,8 @@
           <implicit_spring_damper>1</implicit_spring_damper>
         </ode>
       </physics>
-    </joint>
-    <link name="rotor_0">
+    </joint> -->
+    <!-- <link name="rotor_0">
       <pose>0.49 -0.52 0.05 0.08 -0.08 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -484,7 +579,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-	  <damping>0.004</damping>
+          <damping>0.004</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -929,7 +1024,7 @@
           <implicit_spring_damper>1</implicit_spring_damper>
         </ode>
       </physics>
-    </joint>
+    </joint> -->
 
 
     <!--
@@ -951,7 +1046,7 @@
       </axis>
     </joint>
     -->
-    <plugin name="rotor_0_blade_1" filename="libLiftDragPlugin.so">
+    <!-- <plugin name="rotor_0_blade_1" filename="libLiftDragPlugin.so">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
       <cla>4.2500</cla>
@@ -1081,20 +1176,19 @@
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>rotor_3</link_name>
-    </plugin>
-    <plugin name="arducopter_plugin" filename="libArduPilotPlugin.so">
+    </plugin> -->
+    <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
       <fdm_addr>127.0.0.1</fdm_addr>
       <fdm_port_in>9022</fdm_port_in>
-      <fdm_port_out>9023</fdm_port_out>
+      <!-- <fdm_port_out>9023</fdm_port_out> -->
       <!--
           Require by APM :
           Only change model and gazebo from XYZ to XY-Z coordinates
       -->
       <modelXYZToAirplaneXForwardZDown degrees="true">0 0 0 180 0 0</modelXYZToAirplaneXForwardZDown degrees="true">
-      <gazeboXYZToNED>0 0 0 180 0 90</gazeboXYZToNED>
+      <gazeboXYZToNED degrees="true">0 0 0 180 0 90</gazeboXYZToNED>
       <imuName>base_link::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
-      <control channel="0">
       <!--
           incoming control command [0, 1]
           so offset it by 0 to get [0, 1]
@@ -1102,6 +1196,7 @@
           offset = 0
           multiplier = 838 max rpm / 1 = 838
         -->
+      <!-- <control channel="0">
         <type>VELOCITY</type>
         <offset>0</offset>
         <p_gain>0.5</p_gain>
@@ -1156,7 +1251,7 @@
         <jointName>rotor_3_joint</jointName>
         <multiplier>-832</multiplier>
         <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
-      </control>
+      </control> -->
     </plugin>
   </model>
 </sdf>
