@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+	<model name="VA25_VTOL_8">
+		<link name="left_aileron">
+			<self_collide>false</self_collide>
+			<pose>0.7838276492938377 0.7437513761748877 0.3226151407425975 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.2075195906736219</mass>
+				<inertia>
+					<ixx>0.004639328106225412</ixx>
+					<ixy>0.00011534778131801886</ixy>
+					<ixz>-3.3698935533152508e-06</ixz>
+					<iyy>3.622073888525393e-05</iyy>
+					<iyz>1.1542852124915726e-05</iyz>
+					<izz>0.004671151873854069</izz>
+				</inertia>
+			</inertial>
+			<collision name="left_aileron_collision">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/left_aileron.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="left_aileron_visual">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/left_aileron.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="right_aileron">
+			<self_collide>false</self_collide>
+			<pose>0.7841266999404997 -0.6799887781862646 0.32260314824080005 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.207508066232339</mass>
+				<inertia>
+					<ixx>0.004639128589166831</ixx>
+					<ixy>-0.00011534518553532963</ixy>
+					<ixz>-3.3698325271302566e-06</ixz>
+					<iyy>3.621969166158579e-05</iyy>
+					<iyz>-1.154250086589741e-05</iyz>
+					<izz>0.004670951608339374</izz>
+				</inertia>
+			</inertial>
+			<collision name="right_aileron_collision">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/right_aileron.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="right_aileron_visual">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/right_aileron.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="left_ruddervator">
+			<self_collide>false</self_collide>
+			<pose>0.019245965210225736 0.15184614204919272 0.4017142660362421 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.05522739640235409</mass>
+				<inertia>
+					<ixx>0.00038256835251192884</ixx>
+					<ixy>2.0938677507076166e-05</ixy>
+					<ixz>2.0893317350946816e-05</ixz>
+					<iyy>0.00020035459730011527</iyy>
+					<iyz>-0.00019115648057952797</iyz>
+					<izz>0.00020036995484959148</izz>
+				</inertia>
+			</inertial>
+			<collision name="left_ruddervator_collision">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/left_ruddervator.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="left_ruddervator_visual">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/left_ruddervator.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="right_ruddervator">
+			<self_collide>false</self_collide>
+			<pose>0.019249698492502014 -0.1515642581504666 0.40148577356656384 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.05522723094122592</mass>
+				<inertia>
+					<ixx>0.0003825683512394051</ixx>
+					<ixy>-2.089331982008309e-05</ixy>
+					<ixz>2.09386804012488e-05</ixz>
+					<iyy>0.0002003699179794211</iyy>
+					<iyz>0.0001911564803055427</iyz>
+					<izz>0.00020035456240694014</izz>
+				</inertia>
+			</inertial>
+			<collision name="right_ruddervator_collision">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/right_ruddervator.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="right_ruddervator_visual">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/right_ruddervator.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="base">
+			<self_collide>false</self_collide>
+			<pose>0.9024726334202346 0.01159045634930561 0.2795115726981846 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose>0.0 0.0 0.0 0 0 0</pose>
+				<mass>38.85005456400121</mass>
+				<inertia>
+					<ixx>4.773862562333618</ixx>
+					<ixy>-0.002871126139243279</ixy>
+					<ixz>0.09901728719870735</ixz>
+					<iyy>2.399717603969929</iyy>
+					<iyz>-0.020853780404358212</iyz>
+					<izz>6.9366771796705144</izz>
+				</inertia>
+			</inertial>
+			<collision name="base_collision">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/base.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="base_visual">
+				<geometry>
+					<mesh>
+						<uri>model://VA25_VTOL_8/meshes/CAD/base.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="left_aileron_joint" type="revolute">
+			<parent>base</parent>
+			<child>left_aileron</child>
+			<pose>0.016164280041980846 0.034657323358010785 -0.005562735333249265 0 0 0</pose>
+			<axis>
+				<xyz>-0.037678878844781175 0.9992887623566787 0.00150715515379122</xyz>
+				<limit>
+					<lower>-0.6981317007977318</lower>
+					<upper>0.6981317007977318</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="right_aileron_joint" type="revolute">
+			<parent>base</parent>
+			<child>right_aileron</child>
+			<pose>0.015865229395315622 -0.03464405123119874 -0.005550742831451671 0 0 0</pose>
+			<axis>
+				<xyz>0.03767887884479353 0.9992887623566784 -0.0015071551537917574</xyz>
+				<limit>
+					<lower>-0.6981317007977318</lower>
+					<upper>0.6981317007977318</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="left_ruddervator_joint" type="revolute">
+			<parent>base</parent>
+			<child>left_ruddervator</child>
+			<pose>0.016004672326555003 0.003273461396103041 0.0033801627997988247 0 0 0</pose>
+			<axis>
+				<xyz>-0.08156122422289849 0.7047509371058911 0.7047509371058904</xyz>
+				<limit>
+					<lower>-0.6981317007977318</lower>
+					<upper>0.6981317007977318</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="right_ruddervator_joint" type="revolute">
+			<parent>base</parent>
+			<child>right_ruddervator</child>
+			<pose>0.016000939044278732 -0.0034122222669650706 0.003305665389560062 0 0 0</pose>
+			<axis>
+				<xyz>-0.08156122422289848 -0.7047509371058905 0.7047509371058909</xyz>
+				<limit>
+					<lower>-0.6981317007977318</lower>
+					<upper>0.6981317007977318</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<plugin filename="libcardsflow_gazebo_plugin.so" name="cardsflow_gazebo_plugin"/>
+	</model>
+</sdf>
