@@ -851,7 +851,8 @@
     </joint>
     -->
     <!-- rotor_0_blade_1 -->
-    <plugin name="rotor_0_blade_1" filename="gz::sim::systems::LiftDrag">
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
       <cla>4.2500</cla>
@@ -868,7 +869,8 @@
       <link_name>rotor_0</link_name>
     </plugin>
     <!-- rotor_0_blade_2 -->
-    <plugin name="rotor_0_blade_2" filename="gz::sim::systems::LiftDrag">
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
       <cla>4.2500</cla>
