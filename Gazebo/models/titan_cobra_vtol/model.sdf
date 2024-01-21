@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="titan_cobra_vtol">
+    <pose>0 0 0 0 0 0</pose>
+    <static>0</static>
+
+    <link name="base_link">`
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01625</iyy>
+          <iyz>0</iyz>
+          <izz>0.01625</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_FUSELAGE</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="fuselage_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_FUSELAGE</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="airspeed_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_Airspeed</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="fpv_cam_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>FPVCAM</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="pusher_mount_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_PusherMount</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="stator_5_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_STATOR5</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="spinner_5_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER5</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="engine_5_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE5</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_main_wing_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LMW</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_aileron_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LA</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_boom_mount_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>LBoomMount</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_boom_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LBoom</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_tail_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LTail</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="left_ruddervator_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LRV</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="motor_mount_2_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_MotorMount2</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="stator_2_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_STATOR2</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="spinner_2_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER2</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="engine_2_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE2</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="motor_mount_3_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_MotorMount3</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="stator_3_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_STATOR3</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="spinner_3_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER3</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="engine_3_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE3</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_main_wing_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RMW</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_aileron_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RA</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_boom_mount_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>RBoomMount</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_boom_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RBoom</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_tail_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RTail</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="right_ruddervator_visual">
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RRV</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="motor_mount_1_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_MotorMount1</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="stator_1_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_STATOR1</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="spinner_1_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER1</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="engine_1_visual">
+        <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE1</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="motor_mount_4_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_MotorMount4</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="stator_4_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_STATOR4</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="spinner_4_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER4</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="engine_4_visual">
+        <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE4</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+    </link>
+
+  </model>
+</sdf>
