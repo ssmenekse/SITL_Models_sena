@@ -144,7 +144,7 @@
         </material>
       </visual>
 
-      <visual name="spinner_5_visual">
+      <!-- <visual name="spinner_5_visual">
         <geometry>
           <mesh>
             <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
@@ -188,7 +188,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="left_main_wing_visual">
         <geometry>
@@ -352,7 +352,7 @@
         </material>
       </visual>
 
-      <visual name="stator_2_visual">
+      <!-- <visual name="stator_2_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -398,7 +398,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="engine_2_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
@@ -472,7 +472,7 @@
         </material>
       </visual>
 
-      <visual name="spinner_3_visual">
+      <!-- <visual name="spinner_3_visual">
         <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -518,7 +518,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="right_main_wing_visual">
         <geometry>
@@ -706,7 +706,7 @@
         </material>
       </visual>
 
-      <visual name="spinner_1_visual">
+      <!-- <visual name="spinner_1_visual">
         <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -752,7 +752,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="motor_mount_4_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
@@ -802,7 +802,7 @@
         </material>
       </visual>
 
-      <visual name="spinner_4_visual">
+      <!-- <visual name="spinner_4_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -848,9 +848,518 @@
             </metal>
           </pbr>
         </material>
-      </visual>
-
+      </visual> -->
     </link>
+
+    <link name="motor_1_link">
+      <pose relative_to="base_link">0.1875 -0.29 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
+        </inertia>
+      </inertial>
+      <collision name="spinner_collision">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.105</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="spinner_visual">
+        <pose relative_to="base_link" degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER1</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="engine_visual">
+        <pose relative_to="base_link" degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE1</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="motor_1_joint" type="revolute">
+      <pose relative_to="base_link">0.1875 -0.29 0.06 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>motor_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="motor_2_link">
+      <pose relative_to="base_link">-0.367 0.29 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
+        </inertia>
+      </inertial>
+      <collision name="spinner_collision">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.105</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="spinner_visual">
+        <pose relative_to="base_link" degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER2</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="engine_visual">
+        <pose relative_to="base_link" degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE2</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="motor_2_joint" type="revolute">
+      <pose relative_to="base_link">-0.367 0.29 0.06 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>motor_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="motor_3_link">
+      <pose relative_to="base_link">0.1875 0.29 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
+        </inertia>
+      </inertial>
+      <collision name="spinner_collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.105</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="spinner_visual">
+        <pose relative_to="base_link" degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER3</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="engine_visual">
+        <pose relative_to="base_link" degrees="true">0.22 0 -0.147 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE3</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="motor_3_joint" type="revolute">
+      <pose relative_to="base_link">0.1875 0.29 0.06 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>motor_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="motor_4_link">
+      <pose relative_to="base_link">-0.367 -0.29 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
+        </inertia>
+      </inertial>
+      <collision name="spinner_collision">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.105</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="spinner_visual">
+        <pose relative_to="base_link" degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER4</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="engine_visual">
+        <pose relative_to="base_link" degrees="true">-0.335 0 0.412 0 -90 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE4</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="motor_4_joint" type="revolute">
+      <pose relative_to="base_link">-0.367 -0.29 0.06 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>motor_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="motor_5_link">
+      <pose relative_to="base_link" degrees="true">-0.268 0 0.03 0 -90 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
+        </inertia>
+      </inertial>
+      <collision name="spinner_collision">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.105</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="spinner_visual">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_SPINNER5</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="engine_visual">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_ENGINE5</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="motor_5_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.268 0 0.03 0 -90 0</pose>
+      <parent>base_link</parent>
+      <child>motor_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- plugins -->
+    <plugin name="gz::sim::systems::JointStatePublisher"
+      filename="gz-sim-joint-state-publisher-system">
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointController"
+      filename="gz-sim-joint-controller-system">
+      <joint_name>motor_1_joint</joint_name>
+      <topic>/motor_1_joint/cmd_vel</topic>
+      <initial_velocity>0.0</initial_velocity>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2.5</cmd_max>
+      <cmd_min>-2.5</cmd_min>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointController"
+      filename="gz-sim-joint-controller-system">
+      <joint_name>motor_2_joint</joint_name>
+      <topic>/motor_2_joint/cmd_vel</topic>
+      <initial_velocity>0.0</initial_velocity>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2.5</cmd_max>
+      <cmd_min>-2.5</cmd_min>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointController"
+      filename="gz-sim-joint-controller-system">
+      <joint_name>motor_3_joint</joint_name>
+      <topic>/motor_3_joint/cmd_vel</topic>
+      <initial_velocity>0.0</initial_velocity>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2.5</cmd_max>
+      <cmd_min>-2.5</cmd_min>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointController"
+      filename="gz-sim-joint-controller-system">
+      <joint_name>motor_4_joint</joint_name>
+      <topic>/motor_4_joint/cmd_vel</topic>
+      <initial_velocity>0.0</initial_velocity>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2.5</cmd_max>
+      <cmd_min>-2.5</cmd_min>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointController"
+      filename="gz-sim-joint-controller-system">
+      <joint_name>motor_5_joint</joint_name>
+      <topic>/motor_5_joint/cmd_vel</topic>
+      <initial_velocity>0.0</initial_velocity>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>0.2</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>0.0</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>2.5</cmd_max>
+      <cmd_min>-2.5</cmd_min>
+    </plugin>
 
   </model>
 </sdf>
