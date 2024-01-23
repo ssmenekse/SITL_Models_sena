@@ -1866,20 +1866,20 @@
       </control>
 
       <!-- 
-          SERVO2_FUNCTION   79 (Left V-Tail) +/- 30 deg
+          SERVO2_FUNCTION   80 (Right V-Tail = Left A-Tail) +/- 30 deg
           SERVO2_MAX        2000
           SERVO2_MIN        1000
           SERVO2_REVERSED   0
           SERVO2_TRIM       1500
        -->
       <control channel="1">
-        <jointName>right_ruddervator_joint</jointName>
+        <jointName>left_ruddervator_joint</jointName>
         <multiplier>1.0471976</multiplier>
         <offset>-0.5</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
         <type>COMMAND</type>
-        <cmd_topic>/right_ruddervator/cmd_pos</cmd_topic>
+        <cmd_topic>/left_ruddervator/cmd_pos</cmd_topic>
       </control>
 
       <!-- 
@@ -1900,20 +1900,20 @@
       </control>
 
       <!-- 
-          SERVO4_FUNCTION   80 (Right V-Tail) +/- 30 deg
+          SERVO4_FUNCTION   79 (Left V-Tail = Right A-Tail) +/- 30 deg
           SERVO4_MAX        2000
           SERVO4_MIN        1000
           SERVO4_REVERSED   0
           SERVO4_TRIM       1500
        -->
       <control channel="3">
-        <jointName>left_ruddervator_joint</jointName>
+        <jointName>right_ruddervator_joint</jointName>
         <multiplier>1.0471976</multiplier>
         <offset>-0.5</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
         <type>COMMAND</type>
-        <cmd_topic>/left_ruddervator/cmd_pos</cmd_topic>
+        <cmd_topic>/right_ruddervator/cmd_pos</cmd_topic>
       </control>
 
       <!-- 
