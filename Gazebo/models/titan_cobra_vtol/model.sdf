@@ -6,7 +6,7 @@
 
     <link name="base_link">`
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.054 0 0 0 0 0</pose>
         <mass>1.5</mass>
         <inertia>
           <ixx>0.01</ixx>
@@ -305,7 +305,7 @@
         </material>
       </visual>
 
-      <visual name="left_ruddervator_visual">
+      <!-- <visual name="left_ruddervator_visual">
         <geometry>
           <mesh>
             <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
@@ -326,7 +326,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="motor_mount_2_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
@@ -635,7 +635,7 @@
         </material>
       </visual>
 
-      <visual name="right_ruddervator_visual">
+      <!-- <visual name="right_ruddervator_visual">
         <geometry>
           <mesh>
             <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
@@ -656,7 +656,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="motor_mount_1_visual">
         <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
@@ -964,6 +964,130 @@
       <pose relative_to="base_link" degrees="true">-0.115848 -0.66957 0.056213 0 0 0</pose>
       <parent>base_link</parent>
       <child>right_aileron_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.78539816</lower>
+          <upper>0.78539816</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="left_ruddervator_link">
+      <pose relative_to="base_link" degrees="true">-0.718103 0.19396 0.127626 0 0 0</pose>
+      <inertial>
+        <pose degrees="true">-0.026 0 0 -45 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000334932</ixx>
+          <ixy>0</ixy>
+          <iyy>2.86522E-05</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.000361594</izz>
+        </inertia>
+      </inertial>
+      <collision name="ruddervator_collision">
+        <pose degrees="true">-0.026 0 0 -45 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.057609 0.200181 0.01093</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="ruddervator_visual">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LRV</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_ruddervator_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.718103 0.19396 0.127626 -45 0 0</pose>
+      <parent>base_link</parent>
+      <child>left_ruddervator_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.78539816</lower>
+          <upper>0.78539816</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="right_ruddervator_link">
+      <pose relative_to="base_link" degrees="true">-0.718103 -0.19396 0.127626 0 0 0</pose>
+      <inertial>
+        <pose degrees="true">-0.026 0 0 45 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000334932</ixx>
+          <ixy>0</ixy>
+          <iyy>2.86522E-05</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.000361594</izz>
+        </inertia>
+      </inertial>
+      <collision name="ruddervator_collision">
+        <pose degrees="true">-0.026 0 0 45 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.057609 0.200181 0.01093</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="ruddervator_visual">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RRV</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_ruddervator_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.718103 -0.19396 0.127626 45 0 0</pose>
+      <parent>base_link</parent>
+      <child>right_ruddervator_link</child>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -1550,6 +1674,34 @@
         filename="gz-sim-joint-position-controller-system">
       <joint_name>right_aileron_joint</joint_name>
       <topic>/right_aileron/cmd_pos</topic>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>1</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>0.1</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointPositionController"
+        filename="gz-sim-joint-position-controller-system">
+      <joint_name>left_ruddervator_joint</joint_name>
+      <topic>/left_ruddervator/cmd_pos</topic>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>1</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>0.1</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointPositionController"
+        filename="gz-sim-joint-position-controller-system">
+      <joint_name>right_ruddervator_joint</joint_name>
+      <topic>/right_ruddervator/cmd_pos</topic>
       <use_force_commands>1</use_force_commands>
       <p_gain>1</p_gain>
       <i_gain>0</i_gain>
