@@ -1758,8 +1758,8 @@
       <d_gain>0.0</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>2.5</cmd_max>
-      <cmd_min>-2.5</cmd_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <plugin name="gz::sim::systems::JointController"
@@ -1773,8 +1773,8 @@
       <d_gain>0.0</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>2.5</cmd_max>
-      <cmd_min>-2.5</cmd_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <plugin name="gz::sim::systems::JointController"
@@ -1788,8 +1788,8 @@
       <d_gain>0.0</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>2.5</cmd_max>
-      <cmd_min>-2.5</cmd_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <plugin name="gz::sim::systems::JointController"
@@ -1803,8 +1803,8 @@
       <d_gain>0.0</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>2.5</cmd_max>
-      <cmd_min>-2.5</cmd_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <plugin name="gz::sim::systems::JointController"
@@ -1818,10 +1818,150 @@
       <d_gain>0.0</d_gain>
       <i_max>1</i_max>
       <i_min>-1</i_min>
-      <cmd_max>2.5</cmd_max>
-      <cmd_min>-2.5</cmd_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
+    <!-- lift-drag from iris wih area increased -->
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_1_link</link_name>
+    </plugin>
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_1_link</link_name>
+    </plugin>
+
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_2_link</link_name>
+    </plugin>
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_2_link</link_name>
+    </plugin>
+
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_3_link</link_name>
+    </plugin>
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_3_link</link_name>
+    </plugin>
+
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_4_link</link_name>
+    </plugin>
+    <plugin name="gz::sim::systems::LiftDrag"
+      filename="gz-sim-lift-drag-system">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.003</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_4_link</link_name>
+    </plugin>
 
     <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
       <!-- Connection -->
@@ -1891,7 +2031,7 @@
        -->
       <control channel="2"> 
         <jointName>motor_5_joint</jointName>
-        <multiplier>830</multiplier>
+        <multiplier>900</multiplier>
         <offset>0</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
@@ -1926,7 +2066,7 @@
       <control channel="4">
         <jointName>motor_1_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>830</multiplier>
+        <multiplier>900</multiplier>
         <offset>0</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
@@ -1944,7 +2084,7 @@
       <control channel="5">
         <jointName>motor_2_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>830</multiplier>
+        <multiplier>900</multiplier>
         <offset>0</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
@@ -1962,7 +2102,7 @@
       <control channel="6">
         <jointName>motor_3_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-830</multiplier>
+        <multiplier>-900</multiplier>
         <offset>0</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
@@ -1980,7 +2120,7 @@
       <control channel="7">
         <jointName>motor_4_joint</jointName>
         <useForce>1</useForce>
-        <multiplier>-830</multiplier>
+        <multiplier>-900</multiplier>
         <offset>0</offset>
         <servo_max>2000</servo_max>
         <servo_min>1000</servo_min>
