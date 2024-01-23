@@ -213,7 +213,7 @@
         </material>
       </visual>
 
-      <visual name="left_aileron_visual">
+      <!-- <visual name="left_aileron_visual">
         <geometry>
           <mesh>
             <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
@@ -234,7 +234,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="left_boom_mount_visual">
         <geometry>
@@ -352,7 +352,7 @@
         </material>
       </visual>
 
-      <!-- <visual name="stator_2_visual">
+      <visual name="stator_2_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -376,7 +376,7 @@
         </material>
       </visual>
 
-      <visual name="spinner_2_visual">
+      <!-- <visual name="spinner_2_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -398,7 +398,7 @@
             </metal>
           </pbr>
         </material>
-      </visual> -->
+      </visual>
 
       <visual name="engine_2_visual">
         <pose degrees="true">-0.335 0 0.412 0 -90 0</pose>
@@ -422,7 +422,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="motor_mount_3_visual">
         <pose degrees="true">0.22 0 -0.147 0 -90 0</pose>
@@ -543,7 +543,7 @@
         </material>
       </visual>
 
-      <visual name="right_aileron_visual">
+      <!-- <visual name="right_aileron_visual">
         <geometry>
           <mesh>
             <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
@@ -564,7 +564,7 @@
             </metal>
           </pbr>
         </material>
-      </visual>
+      </visual> -->
 
       <visual name="right_boom_mount_visual">
         <geometry>
@@ -851,6 +851,132 @@
       </visual> -->
     </link>
 
+    <!-- control surfaces -->
+    <link name="left_aileron_link">
+      <pose relative_to="base_link" degrees="true">-0.115848 0.66957 0.056213 0 0 0</pose>
+      <inertial>
+        <pose degrees="true">-0.035 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000477985</ixx>
+          <ixy>0</ixy>
+          <iyy>4.66283E-05</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.00052066</izz>
+        </inertia>
+      </inertial>
+      <collision name="aileron_collision">
+        <pose degrees="true">-0.035 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0732 0.239 0.0154</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aileron_visual">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_LA</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_aileron_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.115848 0.66957 0.056213 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>left_aileron_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.78539816</lower>
+          <upper>0.78539816</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="right_aileron_link">
+      <pose relative_to="base_link" degrees="true">-0.115848 -0.66957 0.056213 0 0 0</pose>
+      <inertial>
+        <pose degrees="true">-0.035 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000477985</ixx>
+          <ixy>0</ixy>
+          <iyy>4.66283E-05</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.00052066</izz>
+        </inertia>
+      </inertial>
+      <collision name="aileron_collision">
+        <pose degrees="true">-0.035 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0732 0.239 0.0154</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aileron_visual">
+        <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://titan_cobra_vtol/meshes/titan_cobra_vtol.dae</uri>
+            <submesh>
+              <name>~CS_RA</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>0.5 0.5 0.5</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
+              <roughness>0.5</roughness>
+              <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_aileron_joint" type="revolute">
+      <pose relative_to="base_link" degrees="true">-0.115848 -0.66957 0.056213 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>right_aileron_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.78539816</lower>
+          <upper>0.78539816</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- motors -->
     <link name="motor_1_link">
       <pose relative_to="base_link">0.1875 -0.29 0.06 0 0 0</pose>
       <inertial>
@@ -897,7 +1023,7 @@
           </pbr>
         </material>
       </visual>
-      <visual name="engine_visual">
+      <!-- <visual name="engine_visual">
         <pose relative_to="base_link" degrees="true">0.22 0 -0.147 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -916,6 +1042,30 @@
               <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
               <roughness>0.5</roughness>
               <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual> -->
+      <visual name="prop_visual">
+        <pose degrees="true">0 0 0.027 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://titan_cobra_vtol/meshes/prop_ccw.dae</uri>
+          </mesh>
+        </geometry>
+         <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_basecolor.jpg</albedo_map>
+              <metalness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_metallic.jpg</metalness_map>
+              <normal_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_normal.jpg</normal_map>
+              <roughness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
             </metal>
           </pbr>
         </material>
@@ -983,7 +1133,7 @@
           </pbr>
         </material>
       </visual>
-      <visual name="engine_visual">
+      <!-- <visual name="engine_visual">
         <pose relative_to="base_link" degrees="true">-0.335 0 0.412 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -1002,6 +1152,30 @@
               <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
               <roughness>0.5</roughness>
               <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual> -->
+      <visual name="prop_visual">
+        <pose degrees="true">0 0 0.027 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://titan_cobra_vtol/meshes/prop_ccw.dae</uri>
+          </mesh>
+        </geometry>
+         <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_basecolor.jpg</albedo_map>
+              <metalness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_metallic.jpg</metalness_map>
+              <normal_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_normal.jpg</normal_map>
+              <roughness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
             </metal>
           </pbr>
         </material>
@@ -1069,7 +1243,7 @@
           </pbr>
         </material>
       </visual>
-      <visual name="engine_visual">
+      <!-- <visual name="engine_visual">
         <pose relative_to="base_link" degrees="true">0.22 0 -0.147 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -1088,6 +1262,30 @@
               <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
               <roughness>0.5</roughness>
               <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual> -->
+      <visual name="prop_visual">
+        <pose degrees="true">0 0 0.027 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://titan_cobra_vtol/meshes/prop_cw.dae</uri>
+          </mesh>
+        </geometry>
+         <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_basecolor.jpg</albedo_map>
+              <metalness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_metallic.jpg</metalness_map>
+              <normal_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_normal.jpg</normal_map>
+              <roughness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
             </metal>
           </pbr>
         </material>
@@ -1155,7 +1353,7 @@
           </pbr>
         </material>
       </visual>
-      <visual name="engine_visual">
+      <!-- <visual name="engine_visual">
         <pose relative_to="base_link" degrees="true">-0.335 0 0.412 0 -90 0</pose>
         <geometry>
           <mesh>
@@ -1174,6 +1372,30 @@
               <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
               <roughness>0.5</roughness>
               <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual> -->
+      <visual name="prop_visual">
+        <pose degrees="true">0 0 0.027 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://titan_cobra_vtol/meshes/prop_cw.dae</uri>
+          </mesh>
+        </geometry>
+         <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_basecolor.jpg</albedo_map>
+              <metalness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_metallic.jpg</metalness_map>
+              <normal_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_normal.jpg</normal_map>
+              <roughness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
             </metal>
           </pbr>
         </material>
@@ -1241,7 +1463,7 @@
           </pbr>
         </material>
       </visual>
-      <visual name="engine_visual">
+      <!-- <visual name="engine_visual">
         <pose relative_to="base_link" degrees="true">0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
@@ -1260,6 +1482,30 @@
               <albedo_map>model://titan_cobra_vtol/meshes/TitanCobraTexture.tga</albedo_map>
               <roughness>0.5</roughness>
               <metalness>0.5</metalness> 
+            </metal>
+          </pbr>
+        </material>
+      </visual> -->
+      <visual name="prop_visual">
+        <pose degrees="true">0 0 0.027 0 180 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://titan_cobra_vtol/meshes/prop_ccw.dae</uri>
+          </mesh>
+        </geometry>
+         <material>
+          <ambient>1 1 1</ambient>
+          <diffuse>1 1 1</diffuse>
+          <specular>1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_basecolor.jpg</albedo_map>
+              <metalness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_metallic.jpg</metalness_map>
+              <normal_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_normal.jpg</normal_map>
+              <roughness_map>model://titan_cobra_vtol/materials/textures/metal_graphite/metal_graphite_roughness.jpg</roughness_map>
+              <roughness>1.0</roughness>
+              <metalness>1.0</metalness> 
             </metal>
           </pbr>
         </material>
@@ -1284,6 +1530,34 @@
     <!-- plugins -->
     <plugin name="gz::sim::systems::JointStatePublisher"
       filename="gz-sim-joint-state-publisher-system">
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointPositionController"
+        filename="gz-sim-joint-position-controller-system">
+      <joint_name>left_aileron_joint</joint_name>
+      <topic>/left_aileron/cmd_pos</topic>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>1</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>0.1</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
+    </plugin>
+    
+    <plugin name="gz::sim::systems::JointPositionController"
+        filename="gz-sim-joint-position-controller-system">
+      <joint_name>right_aileron_joint</joint_name>
+      <topic>/right_aileron/cmd_pos</topic>
+      <use_force_commands>1</use_force_commands>
+      <p_gain>1</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>0.1</d_gain>
+      <i_max>1</i_max>
+      <i_min>-1</i_min>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
     </plugin>
 
     <plugin name="gz::sim::systems::JointController"
