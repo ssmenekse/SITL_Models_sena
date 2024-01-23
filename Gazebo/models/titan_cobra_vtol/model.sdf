@@ -1822,5 +1822,173 @@
       <cmd_min>-2.5</cmd_min>
     </plugin>
 
+
+    <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
+      <!-- Connection -->
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <lock_step>1</lock_step>
+      <have_32_channels>0</have_32_channels>
+
+      <!-- Frame transformations -->
+      <modelXYZToAirplaneXForwardZDown degrees="true">0 0 0 180 0 0</modelXYZToAirplaneXForwardZDown>
+      <gazeboXYZToNED degrees="true">0 0 0 180 0 90</gazeboXYZToNED>
+
+      <!-- Sensors -->
+      <imuName>imu_sensor</imuName>
+
+      <!-- 
+          SERVO1_FUNCTION   4 (Aileron) +/- 30 deg
+          SERVO1_MAX        2000
+          SERVO1_MIN        1000
+          SERVO1_REVERSED   0
+          SERVO1_TRIM       1500
+       -->
+      <control channel="0">
+        <jointName>left_aileron_joint</jointName>
+        <multiplier>-1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/left_aileron/cmd_pos</cmd_topic>
+      </control>
+
+      <control channel="0">
+        <jointName>right_aileron_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/right_aileron/cmd_pos</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO2_FUNCTION   79 (Left V-Tail) +/- 30 deg
+          SERVO2_MAX        2000
+          SERVO2_MIN        1000
+          SERVO2_REVERSED   0
+          SERVO2_TRIM       1500
+       -->
+      <control channel="1">
+        <jointName>right_ruddervator_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/right_ruddervator/cmd_pos</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO3_FUNCTION   70 (Throttle)
+          SERVO3_MAX        2000
+          SERVO3_MIN        1000
+          SERVO3_REVERSED   0
+          SERVO3_TRIM       1000
+       -->
+      <control channel="2"> 
+        <jointName>motor_5_joint</jointName>
+        <multiplier>830</multiplier>
+        <offset>0</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/motor_5/cmd_vel</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO4_FUNCTION   80 (Right V-Tail) +/- 30 deg
+          SERVO4_MAX        2000
+          SERVO4_MIN        1000
+          SERVO4_REVERSED   0
+          SERVO4_TRIM       1500
+       -->
+      <control channel="3">
+        <jointName>left_ruddervator_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/left_ruddervator/cmd_pos</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO5_FUNCTION   33 (Motor1) Front Right CCW
+          SERVO5_MAX        2000
+          SERVO5_MIN        1000
+          SERVO5_REVERSED   0
+          SERVO5_TRIM       1500
+       -->
+      <control channel="4">
+        <jointName>motor_1_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>830</multiplier>
+        <offset>0</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/motor_1/cmd_vel</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO6_FUNCTION   34 (Motor2) Rear Left CCW
+          SERVO6_MAX        2000
+          SERVO6_MIN        1000
+          SERVO6_REVERSED   0
+          SERVO6_TRIM       1500
+       -->
+      <control channel="5">
+        <jointName>motor_2_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>830</multiplier>
+        <offset>0</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/motor_2/cmd_vel</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO7_FUNCTION   35 (Motor3) Front Left CW
+          SERVO7_MAX        2000
+          SERVO7_MIN        1000
+          SERVO7_REVERSED   0
+          SERVO7_TRIM       1500
+       -->
+      <control channel="6">
+        <jointName>motor_3_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-830</multiplier>
+        <offset>0</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/motor_3/cmd_vel</cmd_topic>
+      </control>
+
+      <!-- 
+          SERVO8_FUNCTION   36 (Motor4) Rear Right CW
+          SERVO8_MAX        2000
+          SERVO8_MIN        1000
+          SERVO8_REVERSED   0
+          SERVO8_TRIM       1500
+       -->
+      <control channel="7">
+        <jointName>motor_4_joint</jointName>
+        <useForce>1</useForce>
+        <multiplier>-830</multiplier>
+        <offset>0</offset>
+        <servo_max>2000</servo_max>
+        <servo_min>1000</servo_min>
+        <type>COMMAND</type>
+        <cmd_topic>/motor_4/cmd_vel</cmd_topic>
+      </control>
+
+    </plugin>
+
   </model>
 </sdf>
