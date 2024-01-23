@@ -1833,9 +1833,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>0.084 0 0</cp>
+      <cp>0.1 0 0</cp>
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_1_link</link_name>
@@ -1850,9 +1850,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>-0.084 0 0</cp>
+      <cp>-0.1 0 0</cp>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_1_link</link_name>
@@ -1868,9 +1868,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>0.084 0 0</cp>
+      <cp>0.1 0 0</cp>
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_2_link</link_name>
@@ -1885,9 +1885,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>-0.084 0 0</cp>
+      <cp>-0.1 0 0</cp>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_2_link</link_name>
@@ -1903,9 +1903,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>0.084 0 0</cp>
+      <cp>0.1 0 0</cp>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_3_link</link_name>
@@ -1920,9 +1920,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>-0.084 0 0</cp>
+      <cp>-0.1 0 0</cp>
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_3_link</link_name>
@@ -1938,9 +1938,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>0.084 0 0</cp>
+      <cp>0.1 0 0</cp>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_4_link</link_name>
@@ -1955,9 +1955,9 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.003</area>
+      <area>0.0025</area>
       <air_density>1.2041</air_density>
-      <cp>-0.084 0 0</cp>
+      <cp>-0.1 0 0</cp>
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
       <link_name>motor_4_link</link_name>
