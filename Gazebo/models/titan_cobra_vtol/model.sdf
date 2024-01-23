@@ -1750,7 +1750,7 @@
     <plugin name="gz::sim::systems::JointController"
       filename="gz-sim-joint-controller-system">
       <joint_name>motor_1_joint</joint_name>
-      <topic>/motor_1_joint/cmd_vel</topic>
+      <topic>/motor_1/cmd_vel</topic>
       <initial_velocity>0.0</initial_velocity>
       <use_force_commands>1</use_force_commands>
       <p_gain>0.2</p_gain>
@@ -1765,7 +1765,7 @@
     <plugin name="gz::sim::systems::JointController"
       filename="gz-sim-joint-controller-system">
       <joint_name>motor_2_joint</joint_name>
-      <topic>/motor_2_joint/cmd_vel</topic>
+      <topic>/motor_2/cmd_vel</topic>
       <initial_velocity>0.0</initial_velocity>
       <use_force_commands>1</use_force_commands>
       <p_gain>0.2</p_gain>
@@ -1780,7 +1780,7 @@
     <plugin name="gz::sim::systems::JointController"
       filename="gz-sim-joint-controller-system">
       <joint_name>motor_3_joint</joint_name>
-      <topic>/motor_3_joint/cmd_vel</topic>
+      <topic>/motor_3/cmd_vel</topic>
       <initial_velocity>0.0</initial_velocity>
       <use_force_commands>1</use_force_commands>
       <p_gain>0.2</p_gain>
@@ -1795,7 +1795,7 @@
     <plugin name="gz::sim::systems::JointController"
       filename="gz-sim-joint-controller-system">
       <joint_name>motor_4_joint</joint_name>
-      <topic>/motor_4_joint/cmd_vel</topic>
+      <topic>/motor_4/cmd_vel</topic>
       <initial_velocity>0.0</initial_velocity>
       <use_force_commands>1</use_force_commands>
       <p_gain>0.2</p_gain>
@@ -1810,7 +1810,7 @@
     <plugin name="gz::sim::systems::JointController"
       filename="gz-sim-joint-controller-system">
       <joint_name>motor_5_joint</joint_name>
-      <topic>/motor_5_joint/cmd_vel</topic>
+      <topic>/motor_5/cmd_vel</topic>
       <initial_velocity>0.0</initial_velocity>
       <use_force_commands>1</use_force_commands>
       <p_gain>0.2</p_gain>
