@@ -5,13 +5,13 @@
     <static>true</static>
     <link name="link">
         <visual name="visual">
+          <pose>0 0 -0.008 0 0 0</pose>
             <geometry>
                 <box>
                     <size>1 1 0.02</size>
                 </box>
             </geometry>
             <material>
-                <render_order>5</render_order>
                 <ambient>0.8 0.8 0.8 1</ambient>
                 <diffuse>0.8 0.8 0.8 1</diffuse>
                 <specular>0.8 0.8 0.8 1</specular>
