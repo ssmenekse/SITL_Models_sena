@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <sdf version="1.9">
   <model name="mini_talon_vtail">
+  
+ 
 
     <link name="base_link">
       <inertial>
@@ -463,7 +465,7 @@
     </joint>
 
     <link name="motor_link">
-      <pose degrees="true">-0.41 0 -0.03 0 90 0</pose>
+      <pose degrees="true">0.14 -0.25 0.028 0 -90 0</pose>
       <inertial>
         <!-- <mass>0.106</mass>
         <inertia>
@@ -494,7 +496,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <collision name="propeller_collision">
+      <collision name="collision">
         <pose degrees="true">0 0 -0.005 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -524,8 +526,77 @@
         </material>
       </visual>
     </link>
+    
+     <link name="motor_link2">
+      <pose degrees="true">0.14 0.25 0.028 0 -90 0</pose>
+      <inertial>
+        <!-- <mass>0.106</mass>
+        <inertia>
+          <ixx>1.95636E-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.95636E-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.62313E-05</izz>
+        </inertia> -->
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000166704</iyy>
+          <iyz>0</iyz>
+          <izz>0.000167604</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="motor_collision2">
+        <pose degrees="true">0 0 0.018 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0175</radius>
+            <length>0.036</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="propeller_collision2">
+        <pose degrees="true">0 0 -0.005 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.005</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="motor_visual2">
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/propdrive_3536_motor_can.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="propeller_visual2">
+        <pose degrees="true">0 0 -0.005 0 180 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mini_talon_vtail/meshes/iris_prop_cw.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0.01 0.01 0.01 1</diffuse>
+          <specular>0.01 0.01 0.01 1</specular>
+        </material>
+      </visual>
+    </link>
+    
+    
+     
+    
+    
+    
     <joint name="motor_joint" type="revolute">
-      <pose degrees="true">0 0 0 0 180 0</pose>
+      <pose degrees="true">0 0 0 0 0 0</pose>
       <parent>base_link</parent>
       <child>motor_link</child>
       <axis>
@@ -539,6 +610,25 @@
         </dynamics>
       </axis>
     </joint>
+    
+    <joint name="motor_joint2" type="revolute">
+      <pose degrees="true">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>motor_link2</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.0e-16</lower>
+          <upper>1.0e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    
+
+    
 
     <!-- System plugins. -->
     <plugin filename="gz-sim-joint-state-publisher-system"
@@ -609,24 +699,10 @@
       <cmd_min>-100</cmd_min>
     </plugin>
 
-    <!-- Positive is forward. -->
-    <!-- <plugin
-      filename="gz-sim-thruster-system"
-      name="gz::sim::systems::Thruster">
-      <namespace>mini_talon_vtail</namespace>
-      <joint_name>motor_joint</joint_name>
-      <thrust_coefficient>-0.01</thrust_coefficient>
-      <fluid_density>1.2041</fluid_density>
-      <propeller_diameter>0.254</propeller_diameter>
-      <use_angvel_cmd>1</use_angvel_cmd>
-      <p_gain>0.02</p_gain>
-      <i_gain>0.0</i_gain>
-      <d_gain>0.0</d_gain>
-      <max_thrust_cmd>2000.0</max_thrust_cmd>
-      <min_thrust_cmd>-2000.0</min_thrust_cmd>
-    </plugin> -->
+   
+   
 
-    <!-- motor_joint cw -->
+   
     <plugin filename="gz-sim-lift-drag-system"
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
@@ -648,6 +724,27 @@
         name="gz::sim::systems::LiftDrag">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_link</link_name>
+    </plugin>
+    
+   
+    
+   
+    <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
       <cla>4.25</cla>
       <cda>0.10</cda>
       <cma>0.00</cma>
@@ -656,11 +753,29 @@
       <cma_stall>0.0</cma_stall>
       <area>0.02</area>
       <air_density>1.2041</air_density>
-      <cp>-0.084 0 0</cp>
+      <cp>0.084 0 0</cp>
       <forward>0 1 0</forward>
       <upward>0 0 1</upward>
-      <link_name>motor_link</link_name>
+      <link_name>motor_link2</link_name>
     </plugin>
+     <plugin filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.0</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>motor_link2</link_name>
+    </plugin>
+    
 
     <!-- left wing -->
     <plugin filename="gz-sim-lift-drag-system"
@@ -827,6 +942,7 @@
       <!-- Port settings. -->
       <fdm_addr>127.0.0.1</fdm_addr>
       <fdm_port_in>9002</fdm_port_in>
+      
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <lock_step>1</lock_step>
       <have_32_channels>0</have_32_channels>
@@ -881,6 +997,16 @@
         <type>COMMAND</type>
         <cmd_topic>/left_ruddervator_joint/cmd_pos</cmd_topic>
       </control>
+      
+      <control channel="3">
+        <jointName>right_ruddervator_joint</jointName>
+        <multiplier>1.0471976</multiplier>
+        <offset>-0.5</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <type>COMMAND</type>
+        <cmd_topic>/right_ruddervator_joint/cmd_pos</cmd_topic>
+      </control>
 
       <!-- 
           SERVO3_FUNCTION   70 (Throttle)
@@ -889,8 +1015,9 @@
           SERVO3_REVERSED   0
           SERVO3_TRIM       1000
        -->
-      <control channel="2"> 
+      <control channel="4"> 
         <jointName>motor_joint</jointName>
+         <useForce>1</useForce>
         <multiplier>830</multiplier>
         <offset>0</offset>
         <servo_min>1000</servo_min>
@@ -906,6 +1033,27 @@
         <i_min>-1</i_min>
         <cmd_max>5.0</cmd_max>
         <cmd_min>-5.0</cmd_min>
+        </control>
+        
+        <control channel="5"> 
+         <jointName>motor_joint2</jointName>
+          <useForce>1</useForce>
+        <multiplier>830</multiplier>
+        <offset>0</offset>
+        <servo_min>1000</servo_min>
+        <servo_max>2000</servo_max>
+        <!-- <type>COMMAND</type>
+        <cmd_topic>/model/mini_talon_vtail/joint/motor_joint2/cmd_vel</cmd_topic> -->
+
+        <type>VELOCITY</type>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>5.0</cmd_max>
+        <cmd_min>-5.0</cmd_min>
+
 
       </control>
 
@@ -916,20 +1064,16 @@
           SERVO4_REVERSED   0
           SERVO4_TRIM       1500
        -->
-      <control channel="3">
-        <jointName>right_ruddervator_joint</jointName>
-        <multiplier>1.0471976</multiplier>
-        <offset>-0.5</offset>
-        <servo_min>1000</servo_min>
-        <servo_max>2000</servo_max>
-        <type>COMMAND</type>
-        <cmd_topic>/right_ruddervator_joint/cmd_pos</cmd_topic>
-      </control>
+      
 
     </plugin>
 
   </model>
+  
+ 
+  
 </sdf>
+
 
 <!-- 
   Motor thrust calcs (initial estimates)
@@ -982,7 +1126,7 @@
 
   Aileron:
 
-  gz topic -t /right_aileron_joint/cmd_pos -m gz.msgs.Double -p 'data: 1'
+  gz topic -t /right_aileron_joint/cmd_pos -m gz.msgs.Double -p 'data: 0.5'
 
   Ruddervator:
 
