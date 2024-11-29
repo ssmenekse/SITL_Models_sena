@@ -11,7 +11,8 @@ Note:(where i lost great amount of my time)
     
         
 For advanced simulations, you can configure the camera’s lens and add noise to mimic real-world imperfections.       
-`` <lens>
+`` xml
+<lens>
     <type>perspective</type>
     <cutoff_angle>3.14</cutoff_angle>
     <intrinsics>
