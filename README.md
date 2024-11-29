@@ -11,7 +11,7 @@ Note:(where i lost great amount of my time)
     
         
 For advanced simulations, you can configure the camera’s lens and add noise to mimic real-world imperfections.       
- <lens>
+`` <lens>
     <type>perspective</type>
     <cutoff_angle>3.14</cutoff_angle>
     <intrinsics>
@@ -26,7 +26,7 @@ For advanced simulations, you can configure the camera’s lens and add noise to
   <type>gaussian</type>
   <mean>0.0</mean>
   <stddev>0.20</stddev>
-</noise>
+</noise> ``
 
 Type: Gaussian noise for realistic distortion.
 Mean & Stddev: Configure the noise's statistical properties.
